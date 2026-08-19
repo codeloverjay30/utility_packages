@@ -1,0 +1,23 @@
+[submodule "experiments/Plugins/VSC/VscDeterminer"]
+    path = experiments/Plugins/VSC/VscDeterminer
+    url = https://github.com/vscplugindeveloperjay30/VscDeterminer.git
+
+[submodule "experiments/Scrawler/Phone/AndroidApp/GamesScrawler/OmniAppium.Engine"]
+    path = experiments/Scrawler/Phone/AndroidApp/GamesScrawler/OmniAppium.Engine
+    url = https://github.com/codeloverjay30/OmniAppium.git
+
+[submodule "modules/AiModels/AiUtilityServices"]
+    path = modules/AiModels/AiUtilityServices
+    url = https://github.com/codeloverjay30/AiUtilityServices.git
+
+[submodule "modules/IOOperation/IOOperationUtilityServices"]
+    path = modules/IOOperation/IOOperationUtilityServices
+    url = https://github.com/codeloverjay30/IOOperationUtilityServices.git
+
+[submodule "modules/PackagesManager/PaketUtilityServices"]
+    path = modules/PackagesManager/PaketUtilityServices
+    url = https://github.com/codeloverjay30/PaketUtilityServices.git
+
+[submodule "modules/Models/CommonModels"]
+    path = modules/Models/CommonModels
+    url = https://github.com/codeloverjay30/CommonModels.git
