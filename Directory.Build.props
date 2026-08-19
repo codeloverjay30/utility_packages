@@ -1,0 +1,136 @@
+<Project>
+  <PropertyGroup>
+    <!--
+      IDE/debugger-generated evaluation files are not production source files.
+      SDK-style projects implicitly compile **/*.cs, so exclude these files
+      before the SDK evaluates its default Compile items.
+    -->
+    <DefaultItemExcludes>
+      $(DefaultItemExcludes);
+      **/.vscode-debug-eval.cs;
+      **/.vscode-debug-eval.*.cs
+    </DefaultItemExcludes>
+  </PropertyGroup>
+
+  <!--
+    EARLY BUILD POLICY ONLY.
+
+    Directory.Build.props is imported early. Properties that affect output
+    layout (UseArtifactsOutput / ArtifactsPath) must be decided here, not in
+    Directory.Build.targets.
+
+    Do not infer TargetFrameworkIdentifier / TargetFrameworkVersion here.
+    Those SDK-derived properties may not be available yet.
+  -->
+
+  <ImportGroup>
+    <Import Project="$(MSBuildThisFileDirectory)PreloadPropsEntry.props.entry.config"
+            Condition="Exists('$(MSBuildThisFileDirectory)PreloadPropsEntry.props.entry.config')" />
+  </ImportGroup>
+
+  <PropertyGroup>
+    <!-- Stable repository-root identity available during early evaluation. -->
+    <RepositoryRoot>$(MSBuildThisFileDirectory)</RepositoryRoot>
+    <PackageRootPath>$(RepositoryRoot)</PackageRootPath>
+
+    <Authors>codeloverjay30</Authors>
+
+    <!-- Existing repository package classification defaults. -->
+    <IsClassLibraryPackage>true</IsClassLibraryPackage>
+    <IsBlazorWasmPackage>false</IsBlazorWasmPackage>
+
+    <!-- Default local NuGet package destination. -->
+    <MyNuGetPackageOutputPath>$(PackageRootPath)..\MyLocalNuget\ClassLibrary</MyNuGetPackageOutputPath>
+  </PropertyGroup>
+
+  <!--
+    Import an early, generated project allow-list.
+
+    This is intentional. TargetFramework/OutputType are normally declared
+    inside the project body, which is evaluated after Directory.Build.props.
+    Therefore Directory.Build.props cannot reliably discover
+    "class library + pure net8/net9/net10" by inspecting those properties.
+
+    The generated allow-list converts that late project metadata into an
+    early project-identity decision based on MSBuildProjectFullPath.
+  -->
+  <Import Project="$(RepositoryRoot)ArtifactsOutputProjects.props"
+          Condition="Exists('$(RepositoryRoot)ArtifactsOutputProjects.props')" />
+
+  <!--
+    .NET SDK artifacts output policy.
+
+    Only projects selected by ArtifactsOutputProjects.props have
+    UseArtifactsOutput=true.
+
+    Keep ArtifactsPath here as well: NETSDK1199 requires these properties to
+    be supplied from Directory.Build.props or the command line.
+  -->
+  <PropertyGroup Condition="'$(UseArtifactsOutput)' == 'true'">
+    <ArtifactsPath>$(RepositoryRoot).artifacts</ArtifactsPath>
+  </PropertyGroup>
+
+  <!-- Repository project-category policy based only on early-safe identity. -->
+  <PropertyGroup>
+    <IsTestProject>false</IsTestProject>
+    <IsDemoProject>false</IsDemoProject>
+    <IsSampleProject>false</IsSampleProject>
+    <IsExperimental>false</IsExperimental>
+    <IsStable>false</IsStable>
+    <IsModule>false</IsModule>
+
+    <IsTestProject Condition="$(MSBuildProjectName.Contains('Test'))">true</IsTestProject>
+    <IsDemoProject Condition="$(MSBuildProjectName.Contains('Demo'))">true</IsDemoProject>
+    <IsSampleProject Condition="$(MSBuildProjectName.Contains('Sample'))">true</IsSampleProject>
+
+    <IsExperimental Condition="$(MSBuildProjectDirectory.Contains('experiments'))">true</IsExperimental>
+    <IsStable Condition="$(MSBuildProjectDirectory.Contains('modules'))">true</IsStable>
+    <IsModule Condition="$(MSBuildProjectDirectory.Contains('modules'))">true</IsModule>
+  </PropertyGroup>
+
+  <!-- Local package output policy. -->
+  <Choose>
+    <When Condition="'$(IsBlazorWasmPackage)' == 'true'">
+      <PropertyGroup>
+        <MyNuGetPackageOutputPath>$(PackageRootPath)..\MyLocalNuget\BlazorWebAssembly</MyNuGetPackageOutputPath>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <MyNuGetPackageOutputPath>$(PackageRootPath)..\MyLocalNuget\ClassLibrary</MyNuGetPackageOutputPath>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+
+  <PropertyGroup>
+    <PackageOutputPath>$(MyNuGetPackageOutputPath)</PackageOutputPath>
+    <PackageId>$(MSBuildProjectName)</PackageId>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageTags>Utility Service</PackageTags>
+    <Description>See README.md</Description>
+    <PackageReleaseNotes>See README.md</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/codeloverjay30/utility_packages</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+
+    <!-- Stable modules are packable unless they are tests/demos/samples. -->
+    <IsPackable Condition="'$(IsPackable)' == ''">true</IsPackable>
+    <IsPackable Condition="
+        '$(IsStable)' != 'true'
+        Or '$(IsTestProject)' == 'true'
+        Or '$(IsDemoProject)' == 'true'
+        Or '$(IsSampleProject)' == 'true'">false</IsPackable>
+  </PropertyGroup>
+
+  <!--
+    Legacy/non-artifacts projects keep normal SDK output behavior.
+    Do NOT set OutputPath/BaseOutputPath here for projects using
+    UseArtifactsOutput; the SDK artifacts layout owns those paths.
+  -->
+
+  <ItemGroup Condition="'$(IsPackable)' == 'true' And Exists('$(ProjectDir)README.md')">
+    <None Include="$(ProjectDir)README.md"
+          Pack="true"
+          PackagePath="\" />
+  </ItemGroup>
+</Project>

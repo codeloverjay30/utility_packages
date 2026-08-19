@@ -1,0 +1,90 @@
+<Project>
+  <!--
+    LATE BUILD POLICY ONLY.
+
+    Directory.Build.targets is imported late enough to consume SDK-inferred
+    TargetFrameworkIdentifier / TargetFrameworkVersion / TargetFramework.
+
+    Never set UseArtifactsOutput or ArtifactsPath here.
+  -->
+
+  <!-- Framework classification: safe here because SDK inference has run. -->
+  <PropertyGroup>
+    <IsAtLeastNet6>false</IsAtLeastNet6>
+    <IsAtLeastNet8>false</IsAtLeastNet8>
+    <IsLegacyFramework>true</IsLegacyFramework>
+
+    <IsAtLeastNet6 Condition="
+        '$(TargetFrameworkIdentifier)' == '.NETCoreApp'
+        And $([MSBuild]::VersionGreaterThanOrEquals('$(TargetFrameworkVersion)', 'v6.0'))">
+      true
+    </IsAtLeastNet6>
+
+    <IsAtLeastNet8 Condition="
+        '$(TargetFrameworkIdentifier)' == '.NETCoreApp'
+        And $([MSBuild]::VersionGreaterThanOrEquals('$(TargetFrameworkVersion)', 'v8.0'))">
+      true
+    </IsAtLeastNet8>
+
+    <IsLegacyFramework Condition="'$(IsAtLeastNet6)' == 'true'">false</IsLegacyFramework>
+  </PropertyGroup>
+
+  <!-- Language/compiler convenience policy. -->
+  <PropertyGroup Condition="'$(IsAtLeastNet6)' == 'true'">
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(IsAtLeastNet6)' != 'true'">
+    <ImplicitUsings Condition="'$(ImplicitUsings)' == ''">disable</ImplicitUsings>
+    <Nullable Condition="'$(Nullable)' == ''">disable</Nullable>
+  </PropertyGroup>
+
+  <Target Name="ValidateCompatibilityPackageVersions"
+          BeforeTargets="CollectPackageReferences">
+    <ItemGroup>
+      <InvalidNetStandardLibraryVersion
+          Include="@(PackageVersion)"
+          Condition="
+            '%(Identity)' == 'NETStandard.Library'
+            And '%(Version)' == ''" />
+    </ItemGroup>
+
+    <Error
+        Text="【架構錯誤】NETStandard.Library 已由 Central Package Management 管理，但未指定版本。請修正 Directory.Packages.props。"
+        Code="ARCH001"
+        Condition="'@(InvalidNetStandardLibraryVersion)' != ''" />
+  </Target>
+
+  <!--
+    Defensive artifacts-output validation.
+
+    The generated allow-list is supposed to include only active modules\
+    pure-modern class libraries. These checks make that policy fail-fast
+    even if the generator or generated file is accidentally corrupted.
+  -->
+  <Target Name="ValidateRepositoryArtifactsOutputPolicy"
+          BeforeTargets="PrepareForBuild"
+          Condition="'$(UseArtifactsOutput)' == 'true'">
+
+    <Error
+        Code="ARCH002"
+        Condition="'$(IsArtifactsOutputClassLibrary)' != 'true'"
+        Text="【架構錯誤】UseArtifactsOutput 已啟用，但此專案不在 ArtifactsOutputProjects.props 的 allow-list 中。" />
+
+    <Error
+        Code="ARCH003"
+        Condition="'$(IsModule)' != 'true'"
+        Text="【架構錯誤】只有 modules 目錄下的正式 utility project 可以啟用 repository artifacts output。" />
+
+    <Error
+        Code="ARCH004"
+        Condition="'$(IsExperimental)' == 'true'"
+        Text="【架構錯誤】experiments 目錄下的專案不可啟用 repository artifacts output。" />
+
+    <Error
+        Code="ARCH005"
+        Condition="'$(ArtifactsProjectName)' == ''"
+        Text="【架構錯誤】UseArtifactsOutput=true 時必須由 ArtifactsOutputProjects.props 指定唯一的 ArtifactsProjectName。" />
+  </Target>
+</Project>
