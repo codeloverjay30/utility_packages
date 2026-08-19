@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="StringUtilityServices.Tests/StringUtilityServices.Tests.csproj" />
-  <Project Path="StringUtilityServices/StringUtilityServices.csproj" />
-</Solution>

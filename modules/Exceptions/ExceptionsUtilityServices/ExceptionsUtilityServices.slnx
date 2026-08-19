@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="ExceptionsUtilityServices.Tests/ExceptionsUtilityServices.Tests.csproj" />
-  <Project Path="ExceptionsUtilityServices/ExceptionsUtilityServices.csproj" />
-</Solution>

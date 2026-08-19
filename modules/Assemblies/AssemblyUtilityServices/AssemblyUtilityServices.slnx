@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="AssemblyUtilityServices/AssemblyUtilityServices.csproj" />
-  <Project Path="AssemblyUtilityServices.Tests/AssemblyUtilityServices.Tests.csproj" />
-</Solution>

@@ -1,9 +1,0 @@
-<Solution>
-    <Folder Name="/Solution Items/">
-        <File Path="Directory.Build.targets" />
-        <File Path="Directory.Packages.props" />
-    </Folder>
-    <Project Path="FileNameUtilityFactories/FileNameUtilityFactories.csproj" />
-    <Project Path="LogNameUtilityFactories.Tests/LogNameUtilityFactories.Tests.csproj" Id="f17079e7-1bfe-4c63-8158-467d54ca3cc0" />
-    <Project Path="LogNameUtilityFactories/LogNameUtilityFactories.csproj" />
-</Solution>

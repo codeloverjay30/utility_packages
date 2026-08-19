@@ -21,3 +21,34 @@
 [submodule "modules/Models/CommonModels"]
     path = modules/Models/CommonModels
     url = https://github.com/codeloverjay30/CommonModels.git
+
+[submodule "modules/Strings/StringUtilityServices"]
+	path = modules/Strings/StringUtilityServices
+	url = https://github.com/codeloverjay30/StringUtilityServices.git
+
+[submodule "modules/Math/MathUtilityServices"]
+	path = modules/Math/MathUtilityServices
+	url = https://github.com/codeloverjay30/MathUtilityServices.git
+
+[submodule "modules/IOOperation/FileStreamUtilityServices"]
+	path = modules/IOOperation/FileStreamUtilityServices
+	url = https://github.com/codeloverjay30/FileStreamUtilityServices.git
+
+[submodule "modules/IOOperation/FileNameFactories"]
+	path = modules/IOOperation/FileNameFactories
+	url = https://github.com/codeloverjay30/FileNameFactories.git
+
+[submodule "module/Assemblies/AssemblyUtilityServices"]
+	path = module/Assemblies/AssemblyUtilityServices
+	url = https://github.com/codeloverjay30/AssemblyUtilityServices.git      
+
+[submodule "modules/Spans/SpanUtilityServices"]
+	path = modules/Spans/SpanUtilityServices
+	url = https://github.com/codeloverjay30/SpanUtilityServices.git
+
+[submodule "modules/Exceptions/ExceptionsUtilityServices"]
+	path = modules/Exceptions/ExceptionsUtilityServices
+	url = https://github.com/codeloverjay30/ExceptionsUtilityServices.git
+[submodule "modules/Assemblies/AssemblyUtilityServices"]
+	path = modules/Assemblies/AssemblyUtilityServices
+	url = https://github.com/codeloverjay30/AssemblyUtilityServices.git

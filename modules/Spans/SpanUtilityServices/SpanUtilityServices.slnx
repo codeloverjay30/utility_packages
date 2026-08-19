@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="SpanUtilityServices.Tests/SpanUtilityServices.Tests.csproj" />
-  <Project Path="SpanUtilityServices/SpanUtilityServices.csproj" />
-</Solution>
