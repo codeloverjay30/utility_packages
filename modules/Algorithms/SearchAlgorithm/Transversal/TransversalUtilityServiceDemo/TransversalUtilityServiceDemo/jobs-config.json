@@ -1,0 +1,19 @@
+{
+  "Jobs":[ 
+        { 
+            "Type": "Click"
+        },
+        { 
+            "Type": "ChangeAttribute",
+            "Effects": 
+            {   
+                "To":"Monster",
+                "Buff": 
+                {
+                    "Type":"Blood",
+                    "Func":"x=>x*1.2+500"
+                }
+            }    
+        }
+    ]
+}

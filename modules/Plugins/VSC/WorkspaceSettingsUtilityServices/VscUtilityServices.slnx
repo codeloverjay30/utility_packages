@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="VscUtilityServices.Tests/VscUtilityServices.Tests.csproj" />
+  <Project Path="VscUtilityServices/VscUtilityServices.csproj" />
+</Solution>

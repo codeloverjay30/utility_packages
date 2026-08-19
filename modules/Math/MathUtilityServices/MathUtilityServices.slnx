@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="CoordinateUtilityServices.Tests/CoordinateUtilityServices.Tests.csproj" />
+  <Project Path="CoordinateUtilityServices/CoordinateUtilityServices.csproj" />
+  <Project Path="MathUtilityServices.Tests/MathUtilityServices.Tests.csproj" />
+  <Project Path="MathUtilityServices/MathUtilityServices.csproj"/>
+</Solution>

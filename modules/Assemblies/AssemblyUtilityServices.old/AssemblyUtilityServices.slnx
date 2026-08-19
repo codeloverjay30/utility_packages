@@ -1,0 +1,4 @@
+<Solution>
+    <Project Path="AssemblyUtilityServices/AssemblyUtilityServices.csproj" />
+    <Project Path="AssemblyUtilityServices.Tests/AssemblyUtilityServices.Tests.csproj" Id="a55ee054-b1ae-4dfb-b97e-dc3aa360fa55" />
+</Solution>

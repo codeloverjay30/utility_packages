@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="LoggerTrackerTests/LoggerTrackerTests.csproj" />
+  <Project Path="ProgressBarUtilityServices/ProgressBarUtilityServices.csproj" />
+</Solution>

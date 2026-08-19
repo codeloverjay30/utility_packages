@@ -1,0 +1,114 @@
+# Add patterns to ignore here, one per line
+# temp
+
+tmp/
+[Tt]emp/
+
+# cached
+
+*.cache
+*.cached
+
+# cached file about .NET
+bin/
+obj/
+
+
+# CLI script or module
+
+*.cmd
+*.sh
+*.ps1
+*.psm1
+
+# backups
+*.bak
+*-bak
+
+# VS plugins backup
+.vshistory/
+
+# log
+*.log
+
+# introduction or README.md
+*.md
+*.txt
+
+# Nuke
+.nuke/
+
+# git
+
+.git/
+
+# github
+
+.github/
+
+# license
+
+LICENSE
+
+# configuration
+
+*.config
+*.json
+*.json5
+
+# configuration about Repomix
+*.repomixignore
+
+# configuration about Docker or Docker container
+.devcontainer/
+DockerFile
+
+# configuration about git
+.gitignore
+
+
+# configuration or rule used on AI
+
+Gemini.md
+.clinerules
+
+# configuration about VSC
+
+.vscode/
+
+# configuration about VS
+
+.vssetting/
+.vssetting[Ss]/
+
+
+# configuration about .NET SDK 
+
+nuget.config
+
+# configuration about MonoRepo in .NET 
+
+*.props
+*.targets
+
+# special configuration and my idea
+
+my-idea-global.json5
+notification-manager-idea.md
+NotificationTarget.cs
+projects.ignore.json
+
+# Test project
+*.Test
+*.Test[Ss]
+
+# Demo project
+*Demo
+*Demo[Ss]
+
+# special folder
+idea/
+idea[Ss]/
+
+
+

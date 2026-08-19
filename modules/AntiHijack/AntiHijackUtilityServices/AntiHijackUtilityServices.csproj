@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>preview</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Constants\**" />
+    <EmbeddedResource Remove="Constants\**" />
+    <None Remove="Constants\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Management" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EncryptoUtilityServices\EncryptoUtilityServices.csproj" />
+    <ProjectReference Include="..\TimeUtilityServices\TimeUtilityServices.csproj" />
+    <ProjectReference Include="..\AuthenticationUtilityServices\AuthenticationUtilityServices.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ExceptionsUtilityServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EnvironmentUtilityServices" />
+  </ItemGroup>
+</Project>

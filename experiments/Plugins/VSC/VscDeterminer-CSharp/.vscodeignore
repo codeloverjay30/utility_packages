@@ -1,0 +1,22 @@
+# ============================================
+# VS Code Extension Ignore Configuration
+# ============================================
+
+# 1. 預設排除所有不需要打包的原始碼與暫存檔
+node_modules/
+.vscode-test/
+*.vsix
+.git/
+.github/
+.vscode/
+src/
+[Tt]emp/
+[Tt]mp/
+*.log
+*.tsbuildinfo
+
+# 2. 透過否定規則（!）明確放行編譯後的產出、資源與必要設定檔
+!out/**
+!resources/**
+!package.json
+!README.md

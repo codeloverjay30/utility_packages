@@ -1,0 +1,5 @@
+<Solution>
+    <Project Path="ILoggerBuilderFactoryServices.Tests/ILoggerBuilderFactoryServices.Tests.csproj" />
+    <Project Path="ILoggerBuilderFactoryServices/ILoggerBuilderFactoryServices.csproj" />
+    <Project Path="LogConfigurationUtilityServices/LogConfigurationUtilityServices.csproj" />
+</Solution>

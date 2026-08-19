@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="MoqUtilityServices.Tests/MoqUtilityServices.Tests.csproj" />
+  <Project Path="MoqUtilityServices/MoqUtilityServices.csproj" />
+</Solution>

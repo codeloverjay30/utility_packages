@@ -1,0 +1,5 @@
+<Solution>
+    <Project Path="AzureUtilityServices/AzureUtilityServices.csproj" />
+    <Project Path="AzureUtilityServices.Tests/AzureUtilityServices.Tests.csproj" />
+    <Project Path="AzureSubscription.LoginSuccess.Tests/AzureSubscription.LoginSuccess.Tests.csproj" />
+</Solution>

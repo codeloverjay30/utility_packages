@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ExpressionTreeUtilityServices.Tests/ExpressionTreeUtilityServices.Tests.csproj"/>
+  <Project Path="ExpressionTreeUtilityServices/ExpressionTreeUtilityServices.csproj" />
+</Solution>

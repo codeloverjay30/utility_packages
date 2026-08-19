@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- 透過C#語言的inline task來在編譯時期檢查該專案所使用的MSBuild版本和.NET SDK版本，若版本過舊則丟出編譯錯誤 -->
+    <MinMSBuildReq>17.0</MinMSBuildReq>
+    <MinNetSdkReq>8.0</MinNetSdkReq>
+    <!-- <TargetFrameworks>net10.0;net9.0;net8.0</TargetFrameworks> -->
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <Version>1.1.0</Version>
+    <PackageTags>$(PackageTags);Custom Exceptions</PackageTags>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PassByValue>false</PassByValue>
+    <PassByReference>true</PassByReference>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PassByReference>true</PassByReference>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(PassByValue)' == 'true' or '$(PassByReference)' == 'false'">
+      <PropertyGroup>
+        <PassApproach>PassByValue</PassApproach>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <PassApproach>PassByReference</PassApproach>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  <PropertyGroup>
+    <DefineConstants Condition="'$(PassApproach)' == 'PassByValue'">$(DefineConstants);PASS_BY_VALUE</DefineConstants>
+    <DefineConstants Condition="'$(PassApproach)' == 'PassByReference'">$(DefineConstants);PASS_BY_REFERENCE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="SpanUtilityServices" />
+  </ItemGroup>
+</Project>

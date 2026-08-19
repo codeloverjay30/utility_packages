@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ProgrammingLanguageUtilityServices.Tests/ProgrammingLanguageUtilityServices.Tests.csproj" />
+  <Project Path="ProgrammingLanguageUtilityServices/ProgrammingLanguageUtilityServices.csproj" />
+</Solution>

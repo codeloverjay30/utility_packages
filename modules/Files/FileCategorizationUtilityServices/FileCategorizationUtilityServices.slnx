@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="FileCategorizationUtilityServices.Tests/FileCategorizationUtilityServices.Tests.csproj" />
+  <Project Path="FileCategorizationUtilityServices/FileCategorizationUtilityServices.csproj" />
+</Solution>

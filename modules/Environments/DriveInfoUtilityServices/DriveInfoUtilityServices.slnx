@@ -1,0 +1,5 @@
+<Solution>
+	<Project Path="DriveInfoUtilityServices.Tests/DriveInfoUtilityServices.Tests.csproj" />
+	<Project Path="DriveInfoUtilityServices.xUnit.Tests/DriveInfoUtilityServices.xUnit.Tests.csproj" />
+	<Project Path="DriveInfoUtilityServices/DriveInfoUtilityServices.csproj" />
+</Solution>

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="VscDeterminer.Tests/VscDeterminer.Tests.csproj" />
+  <Project Path="VscDeterminer/VscDeterminer.csproj" />
+</Solution>

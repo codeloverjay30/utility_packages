@@ -1,0 +1,75 @@
+version=1
+
+# This file caches language service data to improve the performance of C# Dev Kit.
+# It is not intended for manual editing. It can safely be deleted and will be
+# regenerated automatically. For more information, see https://aka.ms/lscache
+#
+# To control where cache files are stored, use the following VS Code setting:
+#   "dotnet.projectsystem.cacheInProjectFolder": true
+
+[project]
+language=C#
+primary
+lastDtbSucceeded
+
+[properties]
+AssemblyName=ProjectsVersionUtilityServices.Tests
+CommandLineArgsForDesignTimeEvaluation=-langversion:12.0 -define:TRACE
+CompilerGeneratedFilesOutputPath=
+MaxSupportedLangVersion=12.0
+ProjectAssetsFile=<PATH>obj/project.assets.json
+RootNamespace=ProjectsVersionUtilityServices.Tests
+RunAnalyzers=
+RunAnalyzersDuringLiveAnalysis=
+SolutionPath=*Undefined*
+TargetFrameworkIdentifier=.NETCoreApp
+TargetPath=<PATH>c:/artifacts/Debug/net8.0/ProjectsVersionUtilityServices.Tests.dll
+TargetRefPath=<PATH>obj/Debug/net8.0/ref/ProjectsVersionUtilityServices.Tests.dll
+TemporaryDependencyNodeTargetIdentifier=net8.0
+
+[commandLineArguments]
+/noconfig
+/unsafe-
+/checked-
+/nowarn:NU1507,1701,1702
+/fullpaths
+/nostdlib+
+/errorreport:prompt
+/warn:8
+/define:TRACE;DEBUG;NET;NET8_0;NETCOREAPP;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP1_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER
+/highentropyva+
+/nullable:disable
+/debug+
+/debug:portable
+/filealign:512
+/optimize-
+/out:obj\Debug\net8.0\ProjectsVersionUtilityServices.Tests.dll
+/refout:obj\Debug\net8.0\refint\ProjectsVersionUtilityServices.Tests.dll
+/target:exe
+/warnaserror-
+/utf8output
+/deterministic+
+/langversion:12.0
+/warnaserror+:NU1605,SYSLIB0011
+
+[sourceFiles]
+obj/Debug/net8.0/
+ .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+ ProjectsVersionUtilityServices.Tests.AssemblyInfo.cs
+ ProjectsVersionUtilityServices.Tests.GlobalUsings.g.cs
+ProjectVersionManagerTests.cs
+SelfRegisteredExtensions.cs.bak
+
+[metadataReferences]
+../ProjectsVersionUtilityServices/obj/Debug/net8.0/ref/ProjectsVersionUtilityServices.dll
+
+[analyzerReferences]
+../../../../../../DevTools/dotnet/sdk/10.0.103/Sdks/Microsoft.NET.Sdk/analyzers/
+ Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll
+ Microsoft.CodeAnalysis.NetAnalyzers.dll
+
+[analyzerConfigFiles]
+../../../../../../
+ .editorconfig
+ DevTools/dotnet/sdk/10.0.103/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_8_default.globalconfig
+obj/Debug/net8.0/ProjectsVersionUtilityServices.Tests.GeneratedMSBuildEditorConfig.editorconfig

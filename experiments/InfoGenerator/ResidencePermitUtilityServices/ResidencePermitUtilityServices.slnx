@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ResidencePermitUtilityServices.Demo/ResidencePermitUtilityServices.Demo.csproj" />
+  <Project Path="ResidencePermitUtilityServices/ResidencePermitUtilityServices.csproj" />
+</Solution>

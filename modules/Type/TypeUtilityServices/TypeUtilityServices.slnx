@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="TypeConstants/TypeConstants.csproj" Id="12a2911c-e9a6-44bf-b5ee-2919a9fa704f" />
+  <Project Path="TypeUtilityServices.Tests/TypeUtilityServices.Tests.csproj" Id="2f80471d-c338-4825-9753-518ab66a2d87" />
+  <Project Path="TypeUtilityServices/TypeUtilityServices.csproj" />
+</Solution>

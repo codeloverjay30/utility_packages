@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="CustomAttributes/CustomAttributes.csproj" Id="175781eb-3d51-4620-876d-8f23105a7780" />
+  <Project Path="PostSharp.Demo/PostSharp.Demo.csproj" Id="011ce722-490b-4817-abef-84902a4d706e" />
+  <Project Path="PostSharpAttributesUtilityService.LoggingUtilityService/PostSharpAttributesUtilityService.LoggingUtilityService.csproj" />
+  <Project Path="PostSharpAttributesUtilityService/PostSharpAttributesUtilityService.csproj" />
+</Solution>

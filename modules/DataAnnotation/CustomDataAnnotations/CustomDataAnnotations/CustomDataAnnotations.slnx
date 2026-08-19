@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CustomDataAnnotations.Tests/CustomDataAnnotations.Tests.csproj" Id="e3e6a89e-47a4-451d-bfde-c02fc98aaf9f" />
+  <Project Path="CustomDataAnnotations/CustomDataAnnotations.csproj" />
+</Solution>

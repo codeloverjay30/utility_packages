@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ListItemUitilityServices.Tests/ListItemUitilityServices.Tests.csproj" />
+  <Project Path="ListItemUitilityServices/ListItemUitilityServices.csproj" />
+</Solution>

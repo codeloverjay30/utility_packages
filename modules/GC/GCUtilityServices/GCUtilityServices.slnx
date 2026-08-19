@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="GCGraphServices\GCGraphServices.csproj" />
+  <Project Path="GCViewers\GCViewers.csproj" />
+</Solution>

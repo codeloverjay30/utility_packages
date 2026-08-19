@@ -1,0 +1,715 @@
+PS D:\workspace\utility_packages> Get-ChildItem -Recurse |
+>>     Where-Object { $_.Name -match '^Directory\.(Build\.props|Build\.targets|Packages\.props)$' } |
+>>     ForEach-Object {
+>>         Write-Host "=== ÀÉ®×: $($_.FullName) ===" -ForegroundColor Cyan
+>>         Get-Content $_.FullName
+>>         Write-Host "" # ªÅ¤@¦æ¹j¶}
+>>     }
+=== ÀÉ®×: D:\workspace\utility_packages\Directory.Build.props ===
+<Project>
+  <ImportGroup>
+    <Import Project="$(MSBuildThisFileDirectory)\PreloadPropsEntry.props.entry.config" Condition="Exists('$(MSBuildThisFileDirectory)\PreloadPropsEntry.props.entry.config')" />
+  </ImportGroup>
+  <PropertyGroup>
+    <Authors>codeloverjay30</Authors>
+    <IsClassLibraryPackage>true</IsClassLibraryPackage>
+    <IsBlazorWasmPackage>false</IsBlazorWasmPackage>
+    <PackageRootPath>$(MSBuildThisFileDirectory)</PackageRootPath>
+    <!-- Default path of local NuGet package that will be packed -->
+    <MyNuGetPackageOutputPath>$(PackageRootPath)..\MyLocalNuget\ClassLibrary</MyNuGetPackageOutputPath>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(IsClassLibraryPackage)' == 'true'">
+      <!-- The package is class library or not -->
+      <PropertyGroup>
+        <MyNuGetPackageOutputPath>$(PackageRootPath)..\MyLocalNuget\ClassLibrary</MyNuGetPackageOutputPath>
+      </PropertyGroup>
+    </When>
+    <!-- The package is used for Blazor WebAssembly or not -->
+    <When Condition="'$(IsBlazorWasmPackage)' == 'true'">
+      <PropertyGroup>
+        <MyNuGetPackageOutputPath>$(PackageRootPath)..\MyLocalNuget\BlazorWebAssembly</MyNuGetPackageOutputPath>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <MyNuGetPackageOutputPath>$(PackageRootPath)..\MyLocalNuget\ClassLibrary</MyNuGetPackageOutputPath>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  <PropertyGroup>
+    <PackageOutputPath>$(MyNuGetPackageOutputPath)</PackageOutputPath>
+    <PackageId>$(MSBuildProjectName)</PackageId>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageTags>Utility Service</PackageTags>
+    <Description>See README.md</Description>
+    <PackageReleaseNotes>See README.md</PackageReleaseNotes>
+    <PackageReadmeFile>$(ProjectDir)README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/codeloverjay30/utility_packages</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+  <!-- define property that belongs to framework at .NET SDK 6.0 -->
+  <PropertyGroup>
+    <IsAtLeastNet6>false</IsAtLeastNet6>
+    <IsAtLeastNet6 Condition="'$(TargetFrameworkIdentifier)' == '.NETCoreApp' And $([MSBuild]::VersionGreaterThanOrEquals($(TargetFrameworkVersion), '6.0'))">true</IsAtLeastNet6>
+  </PropertyGroup>
+  <!-- define property that belongs to legacy framework -->
+  <PropertyGroup>
+    <IsLegacyFramework>true</IsLegacyFramework>
+    <IsLegacyFramework Condition="'$(TargetFrameworkIdentifier)' == '.NETCoreApp' And $([MSBuild]::VersionGreaterThanOrEquals($(TargetFrameworkVersion), '6.0'))">false</IsLegacyFramework>
+  </PropertyGroup>
+  <!-- define property that belongs to framework at .NET SDK 8.0 -->
+  <PropertyGroup>
+    <IsAtLeastNet8>false</IsAtLeastNet8>
+    <IsAtLeastNet8 Condition="'$(TargetFrameworkIdentifier)' == '.NETCoreApp' And $([MSBuild]::VersionGreaterThanOrEquals($(TargetFrameworkVersion), '8.0'))">true</IsAtLeastNet8>
+  </PropertyGroup>
+  <Choose>
+      <When Condition="'$(IsAtLeastNet6)'=='true'">
+        <PropertyGroup>
+          <ImplicitUsings>enable</ImplicitUsings>
+          <Nullable>enable</Nullable>
+        </PropertyGroup>
+      </When>
+      <Otherwise>
+        <PropertyGroup>
+          <ImplicitUsings>disable</ImplicitUsings>
+          <Nullable>disable</Nullable>
+        </PropertyGroup>
+      </Otherwise>
+  </Choose>
+  <PropertyGroup>
+    <!-- set is as packable by default -->
+    <IsPackable>true</IsPackable>
+
+    <!-- If the project contains "Test", "Demo", or "Sample", set it as unpackable -->
+    <IsTestProject Condition="$(MSBuildProjectName.Contains('Test'))">true</IsTestProject>
+    <IsDemoProject Condition="$(MSBuildProjectName.Contains('Demo'))">true</IsDemoProject>
+    <IsSampleProject Condition="$(MSBuildProjectName.Contains('Sample'))">true</IsSampleProject>
+
+    <!-- indicates that project is experimental -->
+    <IsExperimental Condition="$(MSBuildProjectDirectory.Contains('experiments'))">true</IsExperimental>
+
+    <!-- indicates that project is stable -->
+    <IsStable Condition="$(MSBuildProjectDirectory.Contains('modules'))">true</IsStable>
+
+    <!-- indicates that project is stable and is module -->
+    <IsModule Condition="$(MSBuildProjectDirectory.Contains('modules'))">true</IsModule>
+
+    <!-- indicates that project is stable class library -->
+    <IsClassLibrary Condition="'$(IsTestProject)' == 'true' Or '$(IsDemoProject)' == 'true' Or '$(IsSampleProject)' == 'true'">false</IsClassLibrary>
+
+    <!-- set it as packable iff it is a class library and it is stable. Otherwise, set is unpackable -->
+    <IsPackable Condition="('$(IsStable)' != 'true' And '$(IsModule)' != 'true') Or ('$(IsClassLibrary)' == 'false')">false</IsPackable>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(IsModule)' == 'true' And ( '$(IsClassLibrary)' == 'true' Or '$(IsTestProject)' == 'true')">
+    <!-- build target path -->
+    <OutputPath>$(SolutionDir)\artifacts\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <!-- is it class library and is .NET SDK 8.0+ -->
+  <PropertyGroup Condition="'$(IsAtLeastNet8)' == 'true' And '$(IsClassLibrary)' == 'true'">
+    <!-- set the build target to put into artifacts path(see`<ArtifactsPath>`), indicating VSCode launcher (`.vscode/launch.json`) uses build target which placed in `<ArtifactsPath>`-->
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <!-- artifacts path -->
+    <ArtifactsPath>$(PackageRootPath).artifacts</ArtifactsPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Condition="'$(IsPackable)' == 'true'" Include="$(ProjectDir)README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+</Project>
+
+=== ÀÉ®×: D:\workspace\utility_packages\Directory.Build.targets ===
+<Project>
+  <Target Name="RemoveVersions" BeforeTargets="CollectPackageReferences">
+    <ItemGroup>
+      <!--  Exclude packages related to `.NET`, avoiding the version of packages related to `.NET` are erased to empty string -->
+      <PackageReference Update="@(PackageReference)" Version=""  Condition="'%(Identity)' != 'NETStandard.Library'" />
+    </ItemGroup>
+  </Target>
+  <!-- The Target is triggered once NuGet completes to restore -->
+  <Target Name="ValidateCompatibilityPackageVersions" AfterTargets="_CheckForUnsupportedTargetFramework">
+
+    <!-- Get all `<PackageVersion>`  -->
+    <ItemGroup>
+      <!-- If `NETStandard.Library package` is specified but its `Version` attribute is NOT specified or with incorrect value, then setting this tag and thus throws an error -->
+      <InvalidCompats Include="@(PackageVersion)"
+                      Condition="'%(Identity)' == 'NETStandard.Library' And '%(Version)' == ''" />
+    </ItemGroup>
+
+    <!-- if `InvalidCompats` is set, throws an error -->
+    <Error Text="?æž¶æ§‹è­¦?Šã‘åµæ¸¬åˆ°?¸å®¹?§å?ä»?NETStandard.Library ?ªåœ¨ä¸­å¤®?Žç¢º?‡å??ˆæœ¬?Ÿï?è«‹è‡³ Directory.Packages.props è£œä???
+           Code="ARCH001"
+           Condition="'@(InvalidCompats)' != ''" />
+  </Target>
+</Project>
+
+=== ÀÉ®×: D:\workspace\utility_packages\Directory.Packages.props ===
+<Project>
+        <PropertyGroup>
+          <NoWarn>$(NoWarn);NU1507</NoWarn>
+        </PropertyGroup>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+  <!-- If one didn't specify the package version, treat it as errors instead of warnings -->
+  <PropertyGroup>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1008;NU1605</WarningsAsErrors>
+  </PropertyGroup>
+  <!-- Let projetcs can be compiled in .NET Framework (older version) when not installed -->
+  <ItemGroup>
+    <GlobalPackageVersion Include="NETStandard.Library" Version="2.0.3" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive"/>
+  </ItemGroup>
+  <ItemGroup>
+    <!-- This applies to ALL projects in the repository automatically -->
+    <GlobalPackageVersion Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
+  </ItemGroup>
+  <!-- When uses `.NET Test Framework`, `Microsoft.NET.Test.Sdk` is used, but for older framework, uses the older version of `Microsoft.NET.Test.Sdk`  -->
+  <!--
+  <ItemGroup Condition="'$(IsLegacyFramework)' != 'true' And '$(TargetFramework)' != 'net452' And '$(TargetFramework)' != 'net472' And '$(TargetFramework)' != 'netstandard2.0'">
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(IsLegacyFramework)' == 'true' Or '$(TargetFramework)' == 'net8.0' Or '$(TargetFramework)' == 'net452' Or '$(TargetFramework)' == 'net472' Or '$(TargetFramework)' == 'netstandard2.0'">
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+  </ItemGroup>
+  -->
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+  </ItemGroup>
+  <!-- Use .ASP .NET Core Framework -->
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.AspNetCore.App.Ref" Version="10.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.TeamFoundationServer.ExtendedClient" Version="20.256.2" />
+  </ItemGroup>
+  <!-- Mock File System -->
+  <ItemGroup Condition="'$(IsLegacyFramework)' != 'true' And '$(TargetFramework)' != 'net452' And '$(TargetFramework)' != 'net472' And '$(TargetFramework)' != 'netstandard2.0'">
+    <!-- abstraction of File system -->
+    <PackageVersion Include="System.IO.Abstractions" Version="22.1.1" />
+    <!-- Mock File System -->
+    <PackageVersion Include="System.IO.Abstractions.TestingHelpers" Version="22.1.1" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(IsLegacyFramework)' == 'true' Or '$(TargetFramework)' == 'net8.0' Or '$(TargetFramework)' == 'net452' Or '$(TargetFramework)' == 'net472' Or '$(TargetFramework)' == 'netstandard2.0'">    <!-- abstraction of File system -->
+    <PackageVersion Include="System.IO.Abstractions" Version="19.2.87" />
+    <!-- Mock File System -->
+    <PackageVersion Include="System.IO.Abstractions.TestingHelpers" Version="19.2.87" />
+  </ItemGroup>
+  <!-- abstraction of System Process -->
+  <ItemGroup>
+    <PackageVersion Include="System.Diagnostics.Abstractions" Version="1.0.9" />
+  </ItemGroup>
+  <!-- abstraction of System Process (used by older test framework such as `xUnit2`) -->
+  <ItemGroup>
+    <PackageVersion Include="Testably.Abstractions.FileSystem.Interface" Version="10.2.0" />
+  </ItemGroup>
+  <!-- Official utility packages of command line -->
+  <ItemGroup>
+    <PackageVersion Include="System.CommandLine" Version="2.0.5" />
+  </ItemGroup>
+  <!-- .NET SDK used by test framework -->
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+  </ItemGroup>
+  <!-- `MSBuild`, simulating `MSBuild` behaviour -->
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.Build" Version="18.4.0" />
+  </ItemGroup>
+  <!-- Locator of `MSBuild` -->
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.Build.Locator" Version="1.11.2" />
+  </ItemGroup>
+  <!-- Official utility packages about accessing version of NuGet package or .NET framework -->
+  <ItemGroup>
+    <!-- accessing version of  NuGet package -->
+    <PackageVersion Include="NuGet.Protocol" Version="7.3.1" />
+    <!-- accessing version of  .NET framework -->
+    <PackageVersion Include="NuGet.Frameworks" Version="7.3.1" />
+  </ItemGroup>
+  <!-- Use traditional mode `VSTest` -->
+  <!-- `NUnit` as Test Framework -->
+  <ItemGroup>
+    <PackageVersion Include="NUnit" Version="4.3.2" />
+    <PackageVersion Include="NUnit3TestAdapter" Version="6.2.0" />
+    <PackageVersion Include="NUnit.Analyzers" Version="4.7.0" />
+  </ItemGroup>
+  <!-- `xUnit.v3` as Test Framework -->
+  <ItemGroup>
+    <PackageVersion Include="coverlet.collector" Version="6.0.4" />
+    <PackageVersion Include="xunit.v3" Version="3.2.2" />
+    <PackageVersion Include="xunit.v3.mtp-v2" Version="3.2.2" />
+    <PackageVersion Include="xunit.v3.extensibility.core" Version="3.2.2" />
+  </ItemGroup>
+  <!-- package that checks the class or property contains specific words, it uses `xUnit.v2` as Test Framework -->
+  <ItemGroup>
+    <PackageVersion Include="TngTech.ArchUnitNET.xUnit" Version="0.13.3" />
+  </ItemGroup>
+  <!-- `xUnit.v2` as Test Framework -->
+  <ItemGroup>
+    <PackageVersion Include="xunit" Version="2.9.3" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.4" />
+  </ItemGroup>
+  <!-- Use modern mode `MTP` -->
+  <!-- use `MSTest` as Test Framework -->
+  <ItemGroup>
+    <PackageVersion Include="MSTest.TestAdapter" Version="3.2.2" />
+    <PackageVersion Include="MSTest.TestFramework" Version="3.2.2" />
+    <PackageVersion Include="Microsoft.Testing.Extensions.VSTestBridge" Version="2.1.0" />
+  </ItemGroup>
+  <!-- use `NUnit` using `MTP` as Test Framework -->
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.TestPlatform" Version="18.4.0" />
+    <PackageVersion Include="Microsoft.Testing.Platform.MSBuild" Version="2.2.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.Testing.Platform" Version="2.2.1" />
+  </ItemGroup>
+  <!-- packages that makes the assertions be more fluent -->
+  <ItemGroup Condition="'$(IsLegacyFramework)' != 'true' And '$(TargetFramework)' != 'net452' And '$(TargetFramework)' != 'net472' And '$(TargetFramework)' != 'netstandard2.0'">
+    <PackageVersion Include="FluentAssertions" Version="8.9.0" />
+    <PackageVersion Include="FluentValidation" Version="12.1.1" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(IsLegacyFramework)' == 'true' Or '$(TargetFramework)' == 'net8.0' Or '$(TargetFramework)' == 'net452' Or '$(TargetFramework)' == 'net472' Or '$(TargetFramework)' == 'netstandard2.0'">
+    <PackageVersion Include="FluentAssertions" Version="5.10.3" />
+    <PackageVersion Include="FluentValidation" Version="8.6.3" />
+  </ItemGroup>
+  <!-- packages that mock the interface and virtual class -->
+  <ItemGroup>
+    <PackageVersion Include="Moq" Version="4.20.72" />
+  </ItemGroup>
+  <!-- packages that checks the AST of class (including, check a class contains property named `property1`) -->
+  <ItemGroup>
+    <PackageVersion Include="NSubstitute" Version="5.3.0" />
+  </ItemGroup>
+  <!-- Rolsyn -->
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="5.3.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="5.3.0" />
+  </ItemGroup>
+  <!-- Rolsyn used for tests -->
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing" Version="1.1.3" />
+  </ItemGroup>
+  <!-- Roslynator -->
+  <ItemGroup>
+    <PackageVersion Include="Roslynator.Analyzers" Version="4.15.0"/>
+  </ItemGroup>
+  <!-- SonarAnalyzer -->
+  <ItemGroup>
+    <PackageVersion Include="SonarAnalyzer.CSharp" Version="10.25.0.139117" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.Bcl.AsyncInterfaces" Version="10.0.7" />
+    <PackageVersion Include="System.ClientModel" Version="1.10.0" />
+    <PackageVersion Include="System.Memory.Data" Version="10.0.3" />
+  </ItemGroup>
+   <!-- logger `ILogger` -->
+  <Choose>
+    <When Condition="'$(IsAtLeast8)' == 'true'">
+      <ItemGroup>
+        <PackageVersion Include="Microsoft.Extensions.Logging" Version="[11.0.0-preview.2.26159.112]" />
+        <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="[11.0.0-preview.2.26159.112]" />
+        <PackageVersion Include="Microsoft.Extensions.Options" Version="[11.0.0-preview.2.26159.112]" />
+        <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="[11.0.0-preview.2.26159.112]" />
+        <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="[11.0.0-preview.2.26159.112]" />
+        <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="[11.0.0-preview.2.26159.112]" />
+        <PackageVersion Include="Microsoft.Extensions.Primitives" Version="[11.0.0-preview.2.26159.112]" />
+        <PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.3" />
+        <PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions" Version="10.0.3" />
+      </ItemGroup>
+    </When>
+    <When Condition="'$(IsAtLeast6)' == 'true' And '$(IsAtLeast8)' != 'true' ">
+      <ItemGroup>
+          <PackageVersion Include="Microsoft.Extensions.Logging" Version="10.0.3" />
+          <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.3" />
+          <PackageVersion Include="Microsoft.Extensions.Options" Version="10.0.3" />
+          <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.3" />
+          <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.3" />
+          <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.3" />
+          <PackageVersion Include="Microsoft.Extensions.Primitives" Version="10.0.3" />
+          <PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.3" />
+          <PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions" Version="10.0.3" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+      <!-- NOT specify version of `Microsoft.Extensions.Logging` and its related packages as it is NOT supported -->
+          <PackageVersion Include="Microsoft.Extensions.Logging" Version="10.0.3" />
+          <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.3" />
+          <PackageVersion Include="Microsoft.Extensions.Options" Version="10.0.3" />
+          <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.3" />
+          <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.3" />
+          <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.3" />
+          <PackageVersion Include="Microsoft.Extensions.Primitives" Version="10.0.3" />
+          <PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.3" />
+          <PackageVersion Include="Microsoft.Extensions.Hosting.Abstractions" Version="10.0.3" />
+        </ItemGroup>
+    </Otherwise>
+  </Choose>
+   <!-- Azure -->
+  <ItemGroup>
+    <PackageVersion Include="Azure.ResourceManager" Version="1.14.0" />
+    <PackageVersion Include="Azure.Identity" Version="1.18.0" />
+    <PackageVersion Include="Azure.Core" Version="1.51.1" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration" Version="10.0.3" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.AzureAppConfiguration" Version="8.5.0" />
+  </ItemGroup>
+  <!-- Registry key on Windows OS -->
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.Win32.Registry" Version="5.0.0" />
+  </ItemGroup>
+  <!-- ACL on Windows OS -->
+  <ItemGroup>
+    <PackageVersion Include="System.Security.AccessControl" Version="6.0.1" />
+  </ItemGroup>
+  <!-- lock -->
+  <ItemGroup>
+    <PackageVersion Include="AsyncKeyedLock" Version="8.0.2" />
+  </ItemGroup>
+  <!-- EF Core -->
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="10.0.3" />
+  </ItemGroup>
+  <!-- `Serilog` -->
+  <ItemGroup>
+    <PackageVersion Include="Serilog" Version="4.3.1" />
+    <PackageVersion Include="Serilog.Settings.Configuration" Version="10.0.0" />
+    <PackageVersion Include="Serilog.Enrichers.Environment" Version="3.0.1" />
+    <PackageVersion Include="Serilog.Exceptions" Version="8.4.0" />
+    <PackageVersion Include="Serilog.Enrichers.Demystifier" Version="1.0.3" />
+    <PackageVersion Include="Serilog.Expressions" Version="5.0.0" />
+    <PackageVersion Include="Serilog.Sinks.File" Version="7.0.0" />
+    <PackageVersion Include="Serilog.Sinks.Console" Version="6.1.1" />
+    <PackageVersion Include="Serilog.Extensions.Hosting" Version="10.0.0" />
+    <PackageVersion Include="Serilog.Extensions.Logging" Version="10.0.0" />
+  </ItemGroup>
+  <!-- `Nuke` -->
+  <ItemGroup>
+    <PackageVersion Include="Nuke.Common" Version="10.1.0" />
+  </ItemGroup>
+  <!-- `PostSharp` -->
+  <ItemGroup>
+    <PackageVersion Include="PostSharp" Version="2026.0.6" />
+    <PackageVersion Include="PostSharp.Patterns.Diagnostics" Version="2026.0.6" />
+  </ItemGroup>
+  <!-- `Appium.WebDriver` -->
+  <ItemGroup>
+    <PackageVersion Include="Appium.WebDriver" Version="8.1.0" />
+    <PackageVersion Include="Selenium.WebDriver" Version="4.36.0" />
+  </ItemGroup>
+  <!-- `Polly` -->
+  <ItemGroup>
+    <PackageVersion Include="Polly" Version="8.6.6" />
+    <PackageVersion Include="Polly.Core" Version="8.6.6" />
+    <PackageVersion Include="Polly.RateLimiting" Version="8.6.6" />
+    <PackageVersion Include="Polly.Extensions" Version="8.6.6" />
+  </ItemGroup>
+  <!-- other packages -->
+  <ItemGroup>
+    <PackageVersion Include="MiniExcel" Version="2.0.0-preview.2" />
+    <PackageVersion Include="QRCoder" Version="1.7.0" />
+    <PackageVersion Include="Otp.NET" Version="1.4.1" />
+    <PackageVersion Include="Spectre.Console" Version="0.54.0" />
+    <PackageVersion Include="MediatR" Version="14.0.0" />
+  </ItemGroup>
+  <!-- about command line (CLI)  -->
+  <ItemGroup>
+    <PackageVersion Include="CliWrap" Version="3.10.1" />
+  </ItemGroup>
+   <!-- about encoding -->
+  <ItemGroup>
+    <PackageVersion Include="System.Text.Encoding.CodePages" Version="10.0.7" />
+  </ItemGroup>
+  <!-- My developed NuGet packages -->
+  <ItemGroup>
+    <PackageVersion Include="AiUtility.AiBaseUtilityServices" Version="[3.0.0-preview-1.0.0]" />
+    <PackageVersion Include="AiUtility.ToolKits" Version="[3.0.0-preview-1.0.0]" />
+    <PackageVersion Include="AiUtility.GeminiKits" Version="[3.0.0-preview-1.0.0]" />
+    <PackageVersion Include="AiUtility.GeminiUtilityServices" Version="[3.0.0-preview-1.0.0]" />
+  </ItemGroup>
+  <!-- My developed NuGet packages -->
+  <ItemGroup>
+    <PackageVersion Include="EnumUtilityServices" Version="2.0.0" />
+    <PackageVersion Include="CustomDataAnnotations" Version="2.2.0" />
+    <PackageVersion Include="TypeConstants" Version="2.1.0" />
+    <PackageVersion Include="MimeTypeConstants" Version="3.0.0" />
+  </ItemGroup>
+  <!-- My developed NuGet packages -->
+  <ItemGroup>
+    <PackageVersion Include="ExpressionTreeUtilityServices" Version="2.0.0" />
+    <PackageVersion Include="ReflectionUtilityServices" Version="2.0.0" />
+    <PackageVersion Include="LogNameUtilityFactories" Version="[2.0.0-preview-1.0.0]" />
+    <PackageVersion Include="RegexUtilityServices" Version="2.0.0" />
+    <PackageVersion Include="AssemblyUtilityServices" Version="[2.0.0-preview-1.0.0]" />
+    <PackageVersion Include="ExceptionHandlingUtilityServices" Version="[3.0.0-preview-1.0.0]" />
+    <PackageVersion Include="ExceptionFactories" Version="2.0.0" />
+    <PackageVersion Include="ExceptionWrappers" Version="[3.0.0-preview-1.0.0]" />
+    <PackageVersion Include="FileStreamUtilityServices" Version="2.1.0" />
+    <PackageVersion Include="JsonUtilityServices" Version="2.0.0" />
+    <PackageVersion Include="LoggerFactoryUtilityServices" Version="[5.0.0-preview-1.0.0]" />
+    <PackageVersion Include="TaskUtilityServices" Version="2.0.0" />
+    <PackageVersion Include="ThreadLevelLockingUtilityServices" Version="[2.0.0-preview-1.0.0]" />
+    <PackageVersion Include="TypeUtilityServices" Version="2.0.0" />
+    <PackageVersion Include="SerilogHelperServices" Version="2.0.0" />
+    <PackageVersion Include="CoordinateUtilityServices" Version="2.0.0" />
+    <PackageVersion Include="TransversalUtilityServices" Version="[2.0.0-preview-1.0.0]" />
+    <PackageVersion Include="AzureUtilityServices" Version="[2.0.0-preview-1.0.0]" />
+    <PackageVersion Include="ListItemUitilityServices" Version="2.0.0" />
+    <PackageVersion Include="MathUtilityServices" Version="2.0.0" />
+    <PackageVersion Include="StringUtilityServices" Version="2.0.0" />
+    <PackageVersion Include="NetRuntimeUtilityServices" Version="[2.0.0-preview-1.0.0]" />
+    <PackageVersion Include="ILoggerBuilderFactoryServices" Version="[2.0.0-preview-1.0.0]" />
+    <PackageVersion Include="LoggingCodeTemplateGenerators" Version="2.0.0" />
+    <PackageVersion Include="IOOperationUtilityServices" Version="[5.0.0-preview-1.0.0]" />
+    <PackageVersion Include="EntriesAndTheirContentsServices" Version="[1.0.0-preview-1.0.0]" />
+    <PackageVersion Include="SortingUtilityServices" Version="1.0.1" />
+    <PackageVersion Include="CommonModels" Version="2.1.0" />
+    <PackageVersion Include="ConsoleUtilityServices" Version="1.0.0" />
+    <PackageVersion Include="FileCategorizationUtilityServices" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageVersion Include="CliUtilityServices" Version="[2.2.0-preview-1.0.0]" />
+    <PackageVersion Include="EnvironmentUtilityServices" Version="1.0.0" />
+    <PackageVersion Include="DriveInfoUtilityServices" Version="1.0.0-preview-1.0.0" />
+    <PackageVersion Include="SymbolicLinkUtilityServices" Version="1.0.0-preview-1.0.0" />
+  </ItemGroup>
+</Project>
+
+=== ÀÉ®×: D:\workspace\utility_packages\modules\AiModels\AiUtilityServices\Directory.Build.props ===
+<Project>
+  <!-- ?‹å?å°Žå…¥ä¸Šå±¤?®é???props æª”æ? -->
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+  <PropertyGroup>
+    <!-- ?œç”¨?°æ¸¬è©¦å¹³?°åŸ·è¡Œå™¨ -->
+    <EnableMicrosoftTestingPlatformRunner>false</EnableMicrosoftTestingPlatformRunner>
+    <!-- ?œç”¨ SDK ?ªå?æ³¨å…¥?„æ¸¬è©¦å¹³?°å???-->
+    <EnableMicrosoftTestingPlatform>false</EnableMicrosoftTestingPlatform>
+    <!-- å¿½ç•¥ VSTest ?„ä??¯æ´?¯èª¤ -->
+    <SuppressTestingPlatformLegacySupportError>true</SuppressTestingPlatformLegacySupportError>
+    <!-- ?Ÿå??„è‡ªå®šç¾© MTP ?è¼¯ -->
+    <EnableMtpTests>true</EnableMtpTests>
+  </PropertyGroup>
+</Project>
+
+=== ÀÉ®×: D:\workspace\utility_packages\modules\AiModels\AiUtilityServices\Directory.Build.targets ===
+<Project>
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.targets', '$(MSBuildThisFileDirectory)../'))"
+          Condition="$([MSBuild]::GetPathOfFileAbove('Directory.Build.targets', '$(MSBuildThisFileDirectory)../')) != ''" />
+</Project>
+
+=== ÀÉ®×: D:\workspace\utility_packages\modules\build\Directory.Build.props ===
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+ </Project>
+
+=== ÀÉ®×: D:\workspace\utility_packages\modules\build\Directory.Build.targets ===
+<Project>
+ </Project>
+
+=== ÀÉ®×: D:\workspace\utility_packages\modules\Databases\EFCoreUtilityServices\Directory.Build.props ===
+<Project>
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+  <PropertyGroup>
+    <Authors>codeloverjay30</Authors>
+    <PackageOutputPath>D:\workspace\MyLocalNuget\BlazorWebAssembly</PackageOutputPath>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+</Project>
+
+=== ÀÉ®×: D:\workspace\utility_packages\modules\IOOperation\FileNameFactories\Directory.Build.targets ===
+<Project>
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.targets', '$(MSBuildThisFileDirectory)../'))"
+          Condition="$([MSBuild]::GetPathOfFileAbove('Directory.Build.targets', '$(MSBuildThisFileDirectory)../')) != ''" />
+</Project>
+
+=== ÀÉ®×: D:\workspace\utility_packages\modules\SourceGenerators\SourceGeneratorUtilityServices\Directory.Build.props ===
+<Project>
+  <PropertyGroup>
+    <Authors>codeloverjay30</Authors>
+    <PackageOutputPath>D:\workspace\MyLocalNuget\ClassLibrary</PackageOutputPath>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+</Project>
+
+PS D:\workspace\utility_packages> dotnet nuget locals all --clear
+Clearing NuGet HTTP cache: D:\nuget\Local\http-cache
+Clearing NuGet global packages folder: D:\DevTools\nuget_cache
+Clearing NuGet Temp cache: C:\Users\userJay30\AppData\Local\Temp\NuGetScratch
+Clearing NuGet plugins cache: C:\Users\userJay30\AppData\Local\NuGet\plugins-cache
+Local resources cleared.
+PS D:\workspace\utility_packages> cd "D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices"
+PS D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices> Get-ChildItem -Recurse artifacts,.artifacts,bin,obj | Remove-Item -Recurse
+PS D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices> cd "ProjectsVersionUtilityServices"
+PS D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices> Get-Content "ProjectsVersionUtilityServices.csproj"
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- ³z¹LC#»y¨¥ªºinline task¨Ó¦b½sÄ¶®É´ÁÀË¬d¸Ó±M®×©Ò¨Ï¥ÎªºMSBuildª©¥»©M.NET SDKª©¥»¡A­Yª©¥»¹LÂÂ«h¥á¥X½sÄ¶¿ù»~ -->
+    <MinMSBuildReq>17.0</MinMSBuildReq>
+    <MinNetSdkReq>8.0</MinNetSdkReq>
+    <TargetFrameworks>net10.0;net8.0</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+      <PackageReference Include="System.IO.Abstractions" />
+      <PackageReference Include="Microsoft.Build" ExcludeAssets="runtime" PrivateAssets="all" />
+  </ItemGroup>
+</Project>
+PS D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices> dotnet nuget locals all --clear
+Clearing NuGet HTTP cache: D:\nuget\Local\http-cache
+Clearing NuGet global packages folder: D:\DevTools\nuget_cache
+Clearing NuGet Temp cache: C:\Users\userJay30\AppData\Local\Temp\NuGetScratch
+Clearing NuGet plugins cache: C:\Users\userJay30\AppData\Local\NuGet\plugins-cache
+Local resources cleared.
+PS D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices> dotnet restore /fl /flp:"LogFile=utility-services-msbuild-restore.log;Append=false;Verbosity=diagnostic"
+D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+Restore succeeded with 2 warning(s) in 31.7s
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1701: Package 'Microsoft.Build 18.4.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1701: Package 'Microsoft.IO.Redist 6.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.
+
+Build succeeded with 4 warning(s) in 32.8s
+PS D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices> dotnet clean /fl /flp:"LogFile=utility-services-msbuild-clean.log;Append=false;Verbosity=diagnostic"
+
+Build succeeded in 2.1s
+PS D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices> dotnet build /fl /flp:"LogFile=utility-services-msbuild-build.log;Append=false;Verbosity=diagnostic"
+D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+Restore succeeded with 2 warning(s) in 1.0s
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1701: Package 'Microsoft.Build 18.4.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1701: Package 'Microsoft.IO.Redist 6.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.
+  ProjectsVersionUtilityServices net8.0 succeeded with 7 warning(s) (5.9s) ¡÷ bin\Debug\net8.0\ProjectsVersionUtilityServices.dll
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1701: Package 'Microsoft.Build 18.4.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1701: Package 'Microsoft.IO.Redist 6.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectVersionManager.cs(26,15): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\IProjectVersionManager.cs(8,69): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\IProjectVersionManager.cs(13,11): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectVersionManager.cs(92,18): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectVersionManager.cs(12,45): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+  ProjectsVersionUtilityServices net10.0 succeeded with 7 warning(s) (6.9s) ¡÷ bin\Debug\net10.0\ProjectsVersionUtilityServices.dll
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1701: Package 'Microsoft.Build 18.4.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1701: Package 'Microsoft.IO.Redist 6.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\IProjectVersionManager.cs(8,69): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\IProjectVersionManager.cs(13,11): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectVersionManager.cs(26,15): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectVersionManager.cs(92,18): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectVersionManager.cs(12,45): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+
+Build succeeded with 18 warning(s) in 8.9s
+PS D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices> cd "../ProjectsVersionUtilityServices.Tests"
+PS D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices.Tests> Get-Content "ProjectsVersionUtilityServices.Tests.csproj"
+<Project Sdk="Microsoft.NET.Sdk">
+        <PropertyGroup>
+          <TargetFrameworks>net10.0</TargetFrameworks>
+          <OutputType>Exe</OutputType>
+          <IsTestProject>true</IsTestProject>
+
+          <EnableMicrosoftTestingPlatform>true</EnableMicrosoftTestingPlatform>
+          <NUnitTestingPlatformEnable>true</NUnitTestingPlatformEnable>
+
+          <GenerateTestingPlatformEntryPoint>true</GenerateTestingPlatformEntryPoint>
+
+          <GenerateSelfRegisteredExtensions>true</GenerateSelfRegisteredExtensions>
+        </PropertyGroup>
+  <!-- <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <IsPackable>false</IsPackable>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <PropertyGroup>
+  -->
+    <!-- ±Ò¥Î Microsoft.Testing.Platform -->
+    <!-- <EnableMicrosoftTestingPlatform>true</EnableMicrosoftTestingPlatform> -->
+    <!-- ¨Ï¥ÎMicrosoft¶}µoªºTesting Platform Runner-->
+    <!-- <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner> -->
+    <!-- §i¶D NUnit ªº Adapter §â¦Û¤vµù¥U¨ì MTP ¤ÞÀº¤¤ -->
+    <!-- <NUnitTestingPlatformEnable>true</NUnitTestingPlatformEnable> -->
+    <!-- ¦Û°Ê²£¥ÍTesting Platform·|°õ¦æªºEntry point -->
+    <!-- <GenerateTestingPlatformEntryPoint>true</GenerateTestingPlatformEntryPoint> -->
+    <!-- ¦Û°Ê²£¥Í Self Registered Extensions -->
+    <!-- <GenerateSelfRegisteredExtensions>true</GenerateSelfRegisteredExtensions> -->
+    <!-- ¦Û°Ê²£¥ÍProgram file -->
+    <!-- <GenerateProgramFile>true</GenerateProgramFile> -->
+  <!-- </PropertyGroup> -->
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" />
+    <!-- ²¾°£¥¦¥HÁ×§KÂÂ¤ÞÀº¤zÂZ -->
+    <!-- <PackageReference Include="Microsoft.NET.Test.Sdk" /> -->
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit.Analyzers" />
+    <PackageReference Include="NUnit3TestAdapter" />
+    <PackageReference Include="Microsoft.Testing.Platform.MSBuild" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Moq" />
+    <PackageReference Include="System.IO.Abstractions.TestingHelpers" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="NUnit.Framework" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj" />
+  </ItemGroup>
+</Project>
+PS D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices.Tests> Get-Content "../global.json"
+{
+  "test": {
+    "runner": "VSTest"
+  }
+}
+PS D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices.Tests> dotnet restore /fl /flp:"LogFile=unit-tests-msbuild-restore.log;Append=false;Verbosity=diagnostic"
+D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices.Tests\ProjectsVersionUtilityServices.Tests.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+Restore succeeded with 2 warning(s) in 28.6s
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1701: Package 'Microsoft.Build 18.4.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1701: Package 'Microsoft.IO.Redist 6.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.
+
+Build succeeded with 5 warning(s) in 29.1s
+PS D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices.Tests> dotnet clean /fl /flp:"LogFile=unit-tests-msbuild-clean.log;Append=false;Verbosity=diagnostic"
+
+Build succeeded in 1.5s
+PS D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices.Tests> dotnet build /fl /flp:"LogFile=unit-tests-msbuild-build.log;Append=false;Verbosity=diagnostic"
+D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices.Tests\ProjectsVersionUtilityServices.Tests.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+Restore succeeded with 2 warning(s) in 1.2s
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1701: Package 'Microsoft.Build 18.4.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1701: Package 'Microsoft.IO.Redist 6.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.
+  ProjectsVersionUtilityServices net10.0 succeeded with 7 warning(s) (0.8s) ¡÷ D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\bin\Debug\net10.0\ProjectsVersionUtilityServices.dll
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1701: Package 'Microsoft.Build 18.4.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj : warning NU1701: Package 'Microsoft.IO.Redist 6.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\IProjectVersionManager.cs(8,69): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\IProjectVersionManager.cs(13,11): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectVersionManager.cs(26,15): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectVersionManager.cs(92,18): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectVersionManager.cs(12,45): warning CS8632: The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+  ProjectsVersionUtilityServices.Tests net10.0 failed with 1 error(s) and 1 warning(s) (1.1s)
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices.Tests\obj\Debug\net10.0\MicrosoftTestingPlatformEntryPoint.cs(12,70): warning CS8892: Method 'MicrosoftTestingPlatformEntryPoint.Main(string[])' will not be used as an entry point because a synchronous entry point 'AutoGeneratedProgram.Main(string[])' was found.
+    D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices.Tests\obj\Debug\net10.0\SelfRegisteredExtensions.cs(16,9): error CS0234: The type or namespace name 'VisualStudio' does not exist in the namespace 'NUnit' (are you missing an assembly reference?)
+
+Build failed with 1 error(s) and 13 warning(s) in 4.2s
+PS D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices.Tests> Get-Content "obj\Debug\net10.0\SelfRegisteredExtensions.cs"
+//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by Microsoft.Testing.Platform.MSBuild
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+namespace ProjectsVersionUtilityServices.Tests
+{
+    [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+    internal static class SelfRegisteredExtensions
+    {
+        public static void AddSelfRegisteredExtensions(this global::Microsoft.Testing.Platform.Builder.ITestApplicationBuilder builder, string[] args)
+        {
+            global::Microsoft.Testing.Platform.MSBuild.TestingPlatformBuilderHook.AddExtensions(builder, args);
+        global::Microsoft.Testing.Extensions.Telemetry.TestingPlatformBuilderHook.AddExtensions(builder, args);
+        global::NUnit.VisualStudio.TestAdapter.TestingPlatformAdapter.TestingPlatformBuilderHook.AddExtensions(builder, args);
+        }
+    }
+}
+PS D:\workspace\utility_packages\modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices.Tests>

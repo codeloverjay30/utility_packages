@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Moq" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NSubstitute" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.TimeProvider.Testing" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AntiHijackUtilityServices\AntiHijackUtilityServices.csproj" />
+    <ProjectReference Include="..\EncryptoUtilityServices\EncryptoUtilityServices.csproj" />
+    <ProjectReference Include="..\TimeUtilityServices\TimeUtilityServices.csproj" />
+    <ProjectReference Include="..\AuthenticationUtilityServices\AuthenticationUtilityServices.csproj" />
+    <ProjectReference Include="..\KeyUtilityServices\KeyUtilityServices.csproj" />
+  </ItemGroup>
+</Project>

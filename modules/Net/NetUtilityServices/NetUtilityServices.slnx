@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="NetRuntimeUtilityServices.Tests/NetRuntimeUtilityServices.Tests.csproj" />
+  <Project Path="NetRuntimeUtilityServices/NetRuntimeUtilityServices.csproj" />
+  <Project Path="NetSdkInfoUtilityServices/NetSdkInfoUtilityServices.csproj" />
+  <Project Path="EnvironmentVariables.Core/EnvironmentVariables.Core.csproj" />
+</Solution>

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SortingUtilityServices.Tests/SortingUtilityServices.Tests.csproj" />
+  <Project Path="SortingUtilityServices/SortingUtilityServices.csproj" />
+</Solution>

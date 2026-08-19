@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="./DateTimeUtilityServices/DateTimeUtilityServices.csproj" />
+  <Project Path="./DateTimeUtilityServices.Tests/DateTimeUtilityServices.Tests.csproj" />
+</Solution>

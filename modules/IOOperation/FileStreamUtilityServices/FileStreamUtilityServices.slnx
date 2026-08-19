@@ -1,0 +1,4 @@
+<Solution>
+    <Project Path="FileStreamUtilityServices.Tests/FileStreamUtilityServices.Tests.csproj" Id="597b4083-7671-4e72-afb8-158d08e858c9" />
+    <Project Path="FileStreamUtilityServices/FileStreamUtilityServices.csproj" />
+</Solution>

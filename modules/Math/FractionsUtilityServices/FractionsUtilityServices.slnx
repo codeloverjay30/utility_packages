@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="FractionsUtilityServices.Tests/FractionsUtilityServices.Tests.csproj" />
+  <Project Path="FractionsUtilityServices/FractionsUtilityServices.csproj" />
+</Solution>

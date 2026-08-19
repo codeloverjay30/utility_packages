@@ -1,0 +1,586 @@
+<Project>
+  <!--
+    GENERATED FILE. Do not edit by hand.
+
+    Source:
+      commands\generate-artifacts-output-projects.ps1
+
+    Repository policy:
+      * modules\ projects only.
+      * Active class libraries only.
+      * Tests, demos and samples are excluded.
+      * Every TFM must be net8.0, net9.0, net10.0,
+        or a platform-qualified variant.
+      * Mixed modern/legacy projects are excluded.
+      * experiments\ projects are never included.
+      * ArtifactsProjectName is repository-wide deterministic and unique.
+  -->
+
+  <!-- modules\AiModels\AiUtilityServices\AiUtility.AiBaseUtilityServices\AiUtility.AiBaseUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\AiModels\AiUtilityServices\AiUtility.AiBaseUtilityServices\AiUtility.AiBaseUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>AiUtility.AiBaseUtilityServices__0FA04AFA</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\AiModels\AiUtilityServices\AiUtility.GeminiKits\AiUtility.GeminiKits.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\AiModels\AiUtilityServices\AiUtility.GeminiKits\AiUtility.GeminiKits.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>AiUtility.GeminiKits__278181D4</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\AiModels\AiUtilityServices\AiUtility.GeminiUtilityServices\AiUtility.GeminiUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\AiModels\AiUtilityServices\AiUtility.GeminiUtilityServices\AiUtility.GeminiUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>AiUtility.GeminiUtilityServices__E7F5FAA0</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\AiModels\AiUtilityServices\AiUtility.ToolKits\AiUtility.ToolKits.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\AiModels\AiUtilityServices\AiUtility.ToolKits\AiUtility.ToolKits.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>AiUtility.ToolKits__2F6A373D</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Algorithms\SearchAlgorithm\Transversal\TransversalUtilityServices\TransversalUtilityServices\TransversalUtilityServices.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Algorithms\SearchAlgorithm\Transversal\TransversalUtilityServices\TransversalUtilityServices\TransversalUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>TransversalUtilityServices__1984B78F</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\AntiHijack\AntiHijackUtilityServices\AntiHijackUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\AntiHijack\AntiHijackUtilityServices\AntiHijackUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>AntiHijackUtilityServices__BA99B9E3</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\AntiHijack\AuthenticationUtilityServices\AuthenticationUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\AntiHijack\AuthenticationUtilityServices\AuthenticationUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>AuthenticationUtilityServices__EC5CC9CA</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\AntiHijack\CommonUtilityServices\CommonUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\AntiHijack\CommonUtilityServices\CommonUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>CommonUtilityServices__DB39D776</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\AntiHijack\GeneratorUtilityServices\GeneratorUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\AntiHijack\GeneratorUtilityServices\GeneratorUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>GeneratorUtilityServices__06459084</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\AntiHijack\KeyUtilityServices\KeyUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\AntiHijack\KeyUtilityServices\KeyUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>KeyUtilityServices__CC8768AE</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\AntiHijack\ObfuscationServices\ObfuscationServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\AntiHijack\ObfuscationServices\ObfuscationServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>ObfuscationServices__57E4F0F3</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\AntiHijack\TimeUtilityServices\TimeUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\AntiHijack\TimeUtilityServices\TimeUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>TimeUtilityServices__FBB75842</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\AntiHijack\UtilityServiceReferences\UtilityServiceReferences.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\AntiHijack\UtilityServiceReferences\UtilityServiceReferences.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>UtilityServiceReferences__3EE977A5</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\App\Packages\AppPackageManager\AppPackageUtilityServices\AppPackageUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\App\Packages\AppPackageManager\AppPackageUtilityServices\AppPackageUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>AppPackageUtilityServices__A152CC53</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Assemblies\AssemblyUtilityServices\AssemblyUtilityServices\AssemblyUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Assemblies\AssemblyUtilityServices\AssemblyUtilityServices\AssemblyUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>AssemblyUtilityServices__2EC8D3E0</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Cli\CliUtilityServices\CliUtilityServices\CliUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Cli\CliUtilityServices\CliUtilityServices\CliUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>CliUtilityServices__164A6AD4</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Cli\CliUtilityServices\CommandResult.Infrastructure\CommandResult.Infrastructure.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Cli\CliUtilityServices\CommandResult.Infrastructure\CommandResult.Infrastructure.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>CommandResult.Infrastructure__913A6E4A</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Cli\CliUtilityServices\Commands.Infrastructure\Commands.Infrastructure.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Cli\CliUtilityServices\Commands.Infrastructure\Commands.Infrastructure.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>Commands.Infrastructure__8B7D4140</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Clouds\Azure\AzureUtilityServices\AzureUtilityServices\AzureUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Clouds\Azure\AzureUtilityServices\AzureUtilityServices\AzureUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>AzureUtilityServices__5317AB08</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Console\ConsoleUtilityServices\ConsoleUtilityServices\ConsoleUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Console\ConsoleUtilityServices\ConsoleUtilityServices\ConsoleUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>ConsoleUtilityServices__E4A52E13</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Databases\EFCoreUtilityServices\EFCoreUtilityServices\EFCoreUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Databases\EFCoreUtilityServices\EFCoreUtilityServices\EFCoreUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>EFCoreUtilityServices__0A5C9EF1</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Enums\EnumUtilityServices\EnumUtilityServices\EnumUtilityServices.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Enums\EnumUtilityServices\EnumUtilityServices\EnumUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>EnumUtilityServices__364EC841</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Environments\DriveInfoUtilityServices\DriveInfoUtilityServices\DriveInfoUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Environments\DriveInfoUtilityServices\DriveInfoUtilityServices\DriveInfoUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>DriveInfoUtilityServices__29054496</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Environments\EnvironmentUtilityServices\EnvironmentUtilityServices\EnvironmentUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Environments\EnvironmentUtilityServices\EnvironmentUtilityServices\EnvironmentUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>EnvironmentUtilityServices__9EE39C39</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Environments\EnvironmentUtilityServices\OsVersionUtilityServices\OsVersionUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Environments\EnvironmentUtilityServices\OsVersionUtilityServices\OsVersionUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>OsVersionUtilityServices__FFD09AFB</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Environments\EnvironmentUtilityServices\RegistryUtilityServices\RegistryUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Environments\EnvironmentUtilityServices\RegistryUtilityServices\RegistryUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>RegistryUtilityServices__2781E74E</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Environments\SymbolicLinkUtilityServices\SymbolicLinkUtilityServices\SymbolicLinkUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Environments\SymbolicLinkUtilityServices\SymbolicLinkUtilityServices\SymbolicLinkUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>SymbolicLinkUtilityServices__087DE436</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\ExceptionHandling\ExceptionUtilityServices\ExceptionHandlingUtilityServices\ExceptionHandlingUtilityServices.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\ExceptionHandling\ExceptionUtilityServices\ExceptionHandlingUtilityServices\ExceptionHandlingUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>ExceptionHandlingUtilityServices__41F22F91</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\ExceptionHandling\ExceptionUtilityServices\ExceptionWrappers\ExceptionWrappers.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\ExceptionHandling\ExceptionUtilityServices\ExceptionWrappers\ExceptionWrappers.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>ExceptionWrappers__BB876295</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Exceptions\ExceptionsUtilityServices\ExceptionsUtilityServices\ExceptionsUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Exceptions\ExceptionsUtilityServices\ExceptionsUtilityServices\ExceptionsUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>ExceptionsUtilityServices__B679D112</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Expressions\Regex\RegexUtilityServices\RegexUtilityServices\RegexUtilityServices.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Expressions\Regex\RegexUtilityServices\RegexUtilityServices\RegexUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>RegexUtilityServices__424C904E</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\ExpressionTrees\ExpressionTreeUtilityServices\ExpressionTreeUtilityServices\ExpressionTreeUtilityServices.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\ExpressionTrees\ExpressionTreeUtilityServices\ExpressionTreeUtilityServices\ExpressionTreeUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>ExpressionTreeUtilityServices__C3217049</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\File_Explorer\FileExplorerUtilityServices\FileExplorerUtilityServices\FileExplorerUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\File_Explorer\FileExplorerUtilityServices\FileExplorerUtilityServices\FileExplorerUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>FileExplorerUtilityServices__EBD9AAB9</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Files\FileCategorizationUtilityServices\FileCategorizationUtilityServices\FileCategorizationUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Files\FileCategorizationUtilityServices\FileCategorizationUtilityServices\FileCategorizationUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>FileCategorizationUtilityServices__9596D47C</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\GC\GCUtilityServices\GCGraphServices\GCGraphServices.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\GC\GCUtilityServices\GCGraphServices\GCGraphServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>GCGraphServices__34D9D42A</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\GC\GCUtilityServices\GCViewers\GCViewers.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\GC\GCUtilityServices\GCViewers\GCViewers.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>GCViewers__0F536C3D</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\IDE\plugins\VSC\LanguageServerCommunicationServices\LanguageServerCommunicationServices\LanguageServerCommunicationServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\IDE\plugins\VSC\LanguageServerCommunicationServices\LanguageServerCommunicationServices\LanguageServerCommunicationServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>LanguageServerCommunicationServices__3C0FE37C</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\IDE\plugins\VSC\LanguageServerUtilityServices\LanguageServerUtilityServices\LanguageServerUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\IDE\plugins\VSC\LanguageServerUtilityServices\LanguageServerUtilityServices\LanguageServerUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>LanguageServerUtilityServices__E264B8E5</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\IOOperation\FileNameFactories\FileNameUtilityFactories\FileNameUtilityFactories.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\IOOperation\FileNameFactories\FileNameUtilityFactories\FileNameUtilityFactories.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>FileNameUtilityFactories__9A34C0FE</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\IOOperation\FileNameFactories\LogNameUtilityFactories\LogNameUtilityFactories.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\IOOperation\FileNameFactories\LogNameUtilityFactories\LogNameUtilityFactories.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>LogNameUtilityFactories__63B3D39B</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\IOOperation\FileStreamUtilityServices\FileStreamUtilityServices\FileStreamUtilityServices.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\IOOperation\FileStreamUtilityServices\FileStreamUtilityServices\FileStreamUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>FileStreamUtilityServices__6501966C</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\IOOperation\IOOperationUtilityServices\EntriesAndTheirContentsServices\EntriesAndTheirContentsServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\IOOperation\IOOperationUtilityServices\EntriesAndTheirContentsServices\EntriesAndTheirContentsServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>EntriesAndTheirContentsServices__BF32EAC4</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\IOOperation\IOOperationUtilityServices\IOOperation.BaseUtilityServices\IOOperation.BaseUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\IOOperation\IOOperationUtilityServices\IOOperation.BaseUtilityServices\IOOperation.BaseUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>IOOperation.BaseUtilityServices__568CFF02</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\IOOperation\IOOperationUtilityServices\IOOperationUtilityServices\IOOperationUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\IOOperation\IOOperationUtilityServices\IOOperationUtilityServices\IOOperationUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>IOOperationUtilityServices__6A8B5086</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\IOOperation\IOOperationUtilityServices\TaskUtilityServices\TaskUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\IOOperation\IOOperationUtilityServices\TaskUtilityServices\TaskUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>TaskUtilityServices__0F7475A6</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\IOOperation\IOOperationUtilityServices\ThreadLevelLockingUtilityServices\ThreadLevelLockingUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\IOOperation\IOOperationUtilityServices\ThreadLevelLockingUtilityServices\ThreadLevelLockingUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>ThreadLevelLockingUtilityServices__4595DA36</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Loggers\LogConfigurationManagers\ILoggerBuilderFactoryServices\ILoggerBuilderFactoryServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Loggers\LogConfigurationManagers\ILoggerBuilderFactoryServices\ILoggerBuilderFactoryServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>ILoggerBuilderFactoryServices__68F9D1EC</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Loggers\LogConfigurationManagers\LogConfigurationUtilityServices\LogConfigurationUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Loggers\LogConfigurationManagers\LogConfigurationUtilityServices\LogConfigurationUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>LogConfigurationUtilityServices__36A7A0B1</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Loggers\LoggerFactoryUtilityServices\LoggerFactoryUtilityServices\LoggerFactoryUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Loggers\LoggerFactoryUtilityServices\LoggerFactoryUtilityServices\LoggerFactoryUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>LoggerFactoryUtilityServices__6A704729</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Loggers\SerilogHelper\SerilogHelperServices\SerilogHelperServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Loggers\SerilogHelper\SerilogHelperServices\SerilogHelperServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>SerilogHelperServices__CB5B2071</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Math\FractionsUtilityServices\FractionsUtilityServices\FractionsUtilityServices.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Math\FractionsUtilityServices\FractionsUtilityServices\FractionsUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>FractionsUtilityServices__E4BCC7D4</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Math\MathUtilityServices\CoordinateUtilityServices\CoordinateUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Math\MathUtilityServices\CoordinateUtilityServices\CoordinateUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>CoordinateUtilityServices__0DF67C23</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Math\MathUtilityServices\MathUtilityServices\MathUtilityServices.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Math\MathUtilityServices\MathUtilityServices\MathUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>MathUtilityServices__1BFAE55E</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Mock\Moq\MoqUtilityServices\MoqUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Mock\Moq\MoqUtilityServices\MoqUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>MoqUtilityServices__1B0BD3DE</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Models\CommonModels\CommonModels\CommonModels.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Models\CommonModels\CommonModels\CommonModels.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>CommonModels__9263657F</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Net\NetUtilityServices\EnvironmentVariables.Core\EnvironmentVariables.Core.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Net\NetUtilityServices\EnvironmentVariables.Core\EnvironmentVariables.Core.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>EnvironmentVariables.Core__94D4559B</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Net\NetUtilityServices\NetRuntimeUtilityServices\NetRuntimeUtilityServices.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Net\NetUtilityServices\NetRuntimeUtilityServices\NetRuntimeUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>NetRuntimeUtilityServices__09B08EA8</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Net\NetUtilityServices\NetSdkInfoUtilityServices\NetSdkInfoUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Net\NetUtilityServices\NetSdkInfoUtilityServices\NetSdkInfoUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>NetSdkInfoUtilityServices__EF8AF6DC</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Office\OfficeUtilityService\OfficeUtilityServices\OfficeUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Office\OfficeUtilityService\OfficeUtilityServices\OfficeUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>OfficeUtilityServices__CA02A7F1</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Operations\ListItemUitilityServices\ListItemUitilityServices\ListItemUitilityServices.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Operations\ListItemUitilityServices\ListItemUitilityServices\ListItemUitilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>ListItemUitilityServices__8F66117E</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Operations\OperationUtilityServices\SortingUtilityServices\SortingUtilityServices.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Operations\OperationUtilityServices\SortingUtilityServices\SortingUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>SortingUtilityServices__2E2CD1A4</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\PackagesManager\PaketUtilityServices\PaketUtilityServices\PaketUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\PackagesManager\PaketUtilityServices\PaketUtilityServices\PaketUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>PaketUtilityServices__AB2EF1CA</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Plugins\VSC\WorkspaceSettingsUtilityServices\VscUtilityServices\VscUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Plugins\VSC\WorkspaceSettingsUtilityServices\VscUtilityServices\VscUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>VscUtilityServices__FBB71381</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Pool\ArrayPool\ArrayPoolUtilityServices\SharedUtilityServices\SharedUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Pool\ArrayPool\ArrayPoolUtilityServices\SharedUtilityServices\SharedUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>SharedUtilityServices__88481FDA</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\ProgrammingLanguages\ProgrammingLanguageUtilityServices\ProgrammingLanguageUtilityServices\ProgrammingLanguageUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\ProgrammingLanguages\ProgrammingLanguageUtilityServices\ProgrammingLanguageUtilityServices\ProgrammingLanguageUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>ProgrammingLanguageUtilityServices__65843884</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\ProgrammingLanguages\ScriptDiscoveryUtilityServices\ScriptDiscoveryUtilityServices\ScriptDiscoveryUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\ProgrammingLanguages\ScriptDiscoveryUtilityServices\ScriptDiscoveryUtilityServices\ScriptDiscoveryUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>ScriptDiscoveryUtilityServices__1EF6FC40</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\ProgressBar\ProgressBarUtilityServices\ProgressBarUtilityServices\ProgressBarUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\ProgressBar\ProgressBarUtilityServices\ProgressBarUtilityServices\ProgressBarUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>ProgressBarUtilityServices__93594075</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Queues\QueueUtilityServices\QueueUtilityServices\QueueUtilityService.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Queues\QueueUtilityServices\QueueUtilityServices\QueueUtilityService.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>QueueUtilityService__4CA8347D</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Reflections\ReflectionUtilityServices\ReflectionUtilityServices\ReflectionUtilityServices.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Reflections\ReflectionUtilityServices\ReflectionUtilityServices\ReflectionUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>ReflectionUtilityServices__DA8030DC</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\RetryOperation\RetryOperationUtilityServices\RetryOperationUtilityServices\RetryOperationUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\RetryOperation\RetryOperationUtilityServices\RetryOperationUtilityServices\RetryOperationUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>RetryOperationUtilityServices__3513D659</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Solution\SolutionUtilityServices\ProjectsVersionUtilityServices\ProjectsVersionUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>ProjectsVersionUtilityServices__2F4BE07D</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Solution\SolutionUtilityServices\SolutionUtilityServices\SolutionUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Solution\SolutionUtilityServices\SolutionUtilityServices\SolutionUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>SolutionUtilityServices__D2FA91C5</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\SourceGenerators\SourceCodeTemplatesUtilityServices\LoggingCodeTemplateGenerators\LoggingCodeTemplateGenerators.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\SourceGenerators\SourceCodeTemplatesUtilityServices\LoggingCodeTemplateGenerators\LoggingCodeTemplateGenerators.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>LoggingCodeTemplateGenerators__4D283B3C</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\SourceGenerators\SourceGeneratorUtilityServices\SourceGeneratorUtilityServices\SourceGeneratorUtilityServices.csproj | net10.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\SourceGenerators\SourceGeneratorUtilityServices\SourceGeneratorUtilityServices\SourceGeneratorUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>SourceGeneratorUtilityServices__847A4B1D</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Spans\SpanUtilityServices\SpanUtilityServices\SpanUtilityServices.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Spans\SpanUtilityServices\SpanUtilityServices\SpanUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>SpanUtilityServices__3B4EC96C</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Strings\StringUtilityServices\StringUtilityServices\StringUtilityServices.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Strings\StringUtilityServices\StringUtilityServices\StringUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>StringUtilityServices__69422917</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\ThirdPackages\PostSharp\PostSharpAttributesUtilityService\CustomAttributes\CustomAttributes.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\ThirdPackages\PostSharp\PostSharpAttributesUtilityService\CustomAttributes\CustomAttributes.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>CustomAttributes__BEB5B94B</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\ThirdPackages\PostSharp\PostSharpAttributesUtilityService\PostSharpAttributesUtilityService.LoggingUtilityService\PostSharpAttributesUtilityService.LoggingUtilityService.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\ThirdPackages\PostSharp\PostSharpAttributesUtilityService\PostSharpAttributesUtilityService.LoggingUtilityService\PostSharpAttributesUtilityService.LoggingUtilityService.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>PostSharpAttributesUtilityService.LoggingUtilityService__B4114951</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\ThirdPackages\PostSharp\PostSharpAttributesUtilityService\PostSharpAttributesUtilityService\PostSharpAttributesUtilityService.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\ThirdPackages\PostSharp\PostSharpAttributesUtilityService\PostSharpAttributesUtilityService\PostSharpAttributesUtilityService.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>PostSharpAttributesUtilityService__B77D5678</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Windows\RegistryKeyUtilityServices\RegistryKeyUtilityServices\RegistryKeyUtilityServices.csproj | net10.0;net9.0;net8.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Windows\RegistryKeyUtilityServices\RegistryKeyUtilityServices\RegistryKeyUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>RegistryKeyUtilityServices__96722AD5</ArtifactsProjectName>
+  </PropertyGroup>
+
+  <!-- modules\Windows\WindowsAppUtilityServices\WindowsAppUtilityServices\WindowsAppUtilityServices.csproj | net10.0 -->
+  <PropertyGroup Condition="'$(MSBuildProjectFullPath)' == '$(RepositoryRoot)modules\Windows\WindowsAppUtilityServices\WindowsAppUtilityServices\WindowsAppUtilityServices.csproj'">
+    <IsArtifactsOutputClassLibrary>true</IsArtifactsOutputClassLibrary>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsProjectName>WindowsAppUtilityServices__5765A23B</ArtifactsProjectName>
+  </PropertyGroup>
+
+</Project>

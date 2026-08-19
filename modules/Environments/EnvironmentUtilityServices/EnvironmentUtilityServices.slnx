@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="EnvironmentUtilityServices.Tests/EnvironmentUtilityServices.Tests.csproj" />
+  <Project Path="EnvironmentUtilityServices/EnvironmentUtilityServices.csproj" />
+  <Project Path="OsVersionUtilityServices.Tests/OsVersionUtilityServices.Tests.csproj" />
+  <Project Path="OsVersionUtilityServices/OsVersionUtilityServices.csproj" />
+  <Project Path="RegistryUtilityServices.Tests/RegistryUtilityServices.Tests.csproj" />
+  <Project Path="RegistryUtilityServices/RegistryUtilityServices.csproj" />
+</Solution>

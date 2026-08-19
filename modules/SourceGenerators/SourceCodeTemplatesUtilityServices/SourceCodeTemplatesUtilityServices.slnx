@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="LoggingCodeTemplateGenerators.Tests/LoggingCodeTemplateGenerators.Tests.csproj" />
+  <Project Path="LoggingCodeTemplateGenerators/LoggingCodeTemplateGenerators.csproj" />
+</Solution>

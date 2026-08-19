@@ -1,0 +1,16 @@
+
+<Solution>
+  <Project Path="AntiHijackUtilityServices.Tests/AntiHijackUtilityServices.Tests.csproj" />
+  <Project Path="AntiHijackUtilityServices/AntiHijackUtilityServices.csproj" />
+  <Project Path="AppSaferDemo/AppSaferDemo.csproj" />
+  <Project Path="CommonUtilityServices/CommonUtilityServices.csproj" />
+  <Project Path="EncryptoServices.Tests/EncryptoServices.Tests.csproj" />
+  <Project Path="EncryptoUtilityServices/EncryptoUtilityServices.csproj" />
+  <Project Path="GeneratorUtilityServices\GeneratorUtilityServices.csproj" />
+  <Project Path="KeyUtilityServices/KeyUtilityServices.csproj" />
+  <Project Path="ObfuscationServices\ObfuscationServices.csproj" />
+  <Project Path="AuthenticationUtilityServices.Tests/AuthenticationUtilityServices.Tests.csproj" />
+  <Project Path="AuthenticationUtilityServices/AuthenticationUtilityServices.csproj" />
+  <Project Path="TimeUtilityServices/TimeUtilityServices.csproj" />
+  <Project Path="UtilityServiceReferences/UtilityServiceReferences.csproj" />
+</Solution>

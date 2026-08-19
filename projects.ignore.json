@@ -1,0 +1,15 @@
+{
+  "IgnoreProjectNames": [
+  ],
+  "IgnoreDirectories":[
+    "D:\\workspace\\utility packages\\NukeTest\\NukeTest.csproj",
+    "D:\\workspace\\utility packages\\Scrawler\\Phone\\AndroidApp\\GamesScrawler\\OmniAppium.Engine",
+    "D:\\workspace\\utility packages\\Logs",
+    ".\\Clouds\\Azure\\AzureUtilityServices\\AzureSubscription.LoginSuccess.Tests",
+    "D:\\workspace\\utility packages\\Clouds\\Azure\\AzureUtilityServices\\AzureUtilityServices.Tests",
+	"D:\\workspace\\utility packages\\ExceptionHandling\\ExceptionUtilityService.bak",
+	"D:\\workspace\\utility packages\\GC\\GCUtilityServiceDemo",
+	"D:\\workspace\\utility packages\\IOOperation\\IOOperationUtilityServices\\IOOperationUtilityServices.Tests\\IOOperationUtilityServices.Tests.csproj",
+	"D:\\workspace\\utility packages\\App\\Packages\\AppPackageManager"
+  ]
+}

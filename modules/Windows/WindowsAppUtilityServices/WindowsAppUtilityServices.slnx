@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="WindowsAppUtilityServices.Demo/WindowsAppUtilityServices.Demo.csproj" />
+  <Project Path="WindowsAppUtilityServices.NUnit.Tests/WindowsAppUtilityServices.NUnit.Tests.csproj" Id="c82d011c-9c24-4681-ae59-1c12654c1dc7" />
+  <Project Path="WindowsAppUtilityServices/WindowsAppUtilityServices.csproj" />
+</Solution>

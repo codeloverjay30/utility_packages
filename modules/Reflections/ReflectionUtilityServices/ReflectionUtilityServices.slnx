@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ReflectionUtilityServices.Tests/ReflectionUtilityServices.Tests.csproj" />
+  <Project Path="ReflectionUtilityServices/ReflectionUtilityServices.csproj" />
+</Solution>

@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- 透過C#語言的inline task來在編譯時期檢查該專案所使用的MSBuild版本和.NET SDK版本，若版本過舊則丟出編譯錯誤 -->
+    <MinMSBuildReq>19.0</MinMSBuildReq>
+    <MinNetSdkReq>10.0</MinNetSdkReq>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Authors>codeloverjay30</Authors>
+    <Version>5.0.0-preview-1.0.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+      <PackageReference Include="CustomDataAnnotations" />
+      <PackageReference Include="CommonModels" />
+      <PackageReference Include="ExceptionFactories" />
+      <PackageReference Include="Polly" />
+      <PackageReference Include="Polly.Core" />
+      <PackageReference Include="Polly.RateLimiting" />
+      <PackageReference Include="System.IO.Abstractions" />
+      <PackageReference Include="Microsoft.Build" ExcludeAssets="runtime" PrivateAssets="all" />      
+      <PackageReference Include="Microsoft.Build.Locator" />
+      <PackageReference Include="NuGet.Protocol" />
+      <PackageReference Include="NuGet.Frameworks" ExcludeAssets="runtime" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

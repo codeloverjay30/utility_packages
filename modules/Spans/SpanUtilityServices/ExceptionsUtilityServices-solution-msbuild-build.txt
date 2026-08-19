@@ -1,0 +1,398 @@
+Build started 6/17/2026 2:49:03 PM.
+Logging verbosity is set to: Detailed.     0>Process = "D:\DevTools\dotnet\dotnet.exe"
+       MSBuild executable path = "D:\DevTools\dotnet\sdk\10.0.103\MSBuild.dll"
+       Command line arguments = "D:\DevTools\dotnet\sdk\10.0.103\MSBuild.dll -maxcpucount --verbosity:m -tlp:default=auto --property:NuGetInteractive=true --restoreProperty:NuGetInteractive=true --restoreProperty:EnableDefaultCompileItems=false --restoreProperty:EnableDefaultEmbeddedResourceItems=false --restoreProperty:EnableDefaultNoneItems=false -fl -flp:logFile=ExceptionsUtilityServices-solution-msbuild-build.txt;Append=false -consoleloggerparameters:Summary -restore -distributedlogger:Microsoft.DotNet.Cli.Commands.MSBuild.MSBuildLogger,D:\DevTools\dotnet\sdk\10.0.103\dotnet.dll*Microsoft.DotNet.Cli.Commands.MSBuild.MSBuildForwardingLogger,D:\DevTools\dotnet\sdk\10.0.103\dotnet.dll -nologo"
+       Current directory = "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices"
+       MSBuild version = "18.0.11+c2435c3e0"
+       Based on the Windows registry key LongPathsEnabled, the LongPaths feature is enabled.
+       Based on the Windows registry key VerifiedAndReputablePolicyState, SAC state = 0: turned off.
+       D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.slnx.metaproj : message : Property 'MSBuildExtensionsPath' with value 'D:\DevTools\dotnet\sdk\10.0.103\' expanded from the environment.
+       Assembly loaded during Evaluation: System.Threading.Tasks.Parallel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: D:\DevTools\dotnet\shared\Microsoft.NETCore.App\10.0.3\System.Threading.Tasks.Parallel.dll, MVID: 484bafc2-9f0e-4e62-8af6-e65d5cd71f84, AssemblyLoadContext: Default)
+       The "NuGetInteractive" property is a global property, and cannot be modified.
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message : Property reassignment: $(_GenerateRestoreGraphProjectEntryInputProperties)="
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message :       ExcludeRestorePackageImports=true;
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message :       _RestoreSolutionFileUsed=true;
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message :       SolutionDir=D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\;
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message :       SolutionName=SpanUtilityServices;
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message :       SolutionFileName=SpanUtilityServices.slnx;
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message :       SolutionPath=D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.slnx;
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message :       SolutionExt=.slnx;
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message :     " (previous value: "ExcludeRestorePackageImports=true") at D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets (123,5)
+       Overriding target "Restore" in project "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.slnx.metaproj" with target "Restore" from project "D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets".
+       The target "_MTPBuild" listed in a BeforeTargets attribute at "D:\DevTools\dotnet\sdk\10.0.103\Current\SolutionFile\ImportAfter\Microsoft.NET.Sdk.Solution.targets (24,11)" does not exist in the project, and will be ignored.
+       The target "Store" listed in a BeforeTargets attribute at "D:\DevTools\dotnet\sdk\10.0.103\Current\SolutionFile\ImportAfter\Microsoft.NET.Sdk.Solution.targets (33,11)" does not exist in the project, and will be ignored.
+       The target "VSTest" listed in a BeforeTargets attribute at "D:\DevTools\dotnet\sdk\10.0.103\Current\SolutionFile\ImportAfter\Microsoft.NET.Sdk.Solution.targets (33,11)" does not exist in the project, and will be ignored.
+       The target "_MTPBuild" listed in a BeforeTargets attribute at "D:\DevTools\dotnet\sdk\10.0.103\Current\SolutionFile\ImportAfter\Microsoft.NET.Sdk.Solution.targets (33,11)" does not exist in the project, and will be ignored.
+       The target "_CheckForInvalidConfigurationAndPlatform" listed in a BeforeTargets attribute at "D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets (703,11)" does not exist in the project, and will be ignored.
+     1>Project "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.slnx" on node 1 (Restore target(s)).
+     1>Target "ValidateSolutionConfiguration" in file "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.slnx.metaproj" from project "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.slnx" (entry point):
+     1>Using "Message" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "Message"
+         Building solution configuration "Debug|Any CPU".
+       Done executing task "Message".
+     1>Done building target "ValidateSolutionConfiguration" in project "SpanUtilityServices.slnx".
+     1>Target "ValidateToolsVersions" in file "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.slnx.metaproj" from project "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.slnx" (entry point):
+     1>Done building target "ValidateToolsVersions" in project "SpanUtilityServices.slnx".
+     1>Target "ValidateProjects" in file "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.slnx.metaproj" from project "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.slnx" (entry point):
+     1>Done building target "ValidateProjects" in project "SpanUtilityServices.slnx".
+     1>Target "_LoadRestoreGraphEntryPoints" in file "D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets" from project "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.slnx" (target "_FilterRestoreGraphProjectInputItems" depends on it):
+       Assembly loaded during TaskRun: NuGet.Build.Tasks, Version=7.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: D:\DevTools\dotnet\sdk\10.0.103\NuGet.Build.Tasks.dll, MVID: c55bf910-9abe-4187-805d-dad3881bc30c, AssemblyLoadContext: MSBuild plugin D:\DevTools\dotnet\sdk\10.0.103\NuGet.Build.Tasks.dll)
+       Assembly loaded during TaskRun: System.Reflection.Metadata, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: D:\DevTools\dotnet\shared\Microsoft.NETCore.App\10.0.3\System.Reflection.Metadata.dll, MVID: 27047d9b-17f3-4ec1-8143-6797ef25cd28, AssemblyLoadContext: Default)
+       Assembly loaded during TaskRun: NuGet.Common, Version=7.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: D:\DevTools\dotnet\sdk\10.0.103\NuGet.Common.dll, MVID: 9a75e9a2-ebcf-4c20-863c-86b8d21a910c, AssemblyLoadContext: MSBuild plugin D:\DevTools\dotnet\sdk\10.0.103\NuGet.Build.Tasks.dll)
+       Assembly loaded during TaskRun: NuGet.Commands, Version=7.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: D:\DevTools\dotnet\sdk\10.0.103\NuGet.Commands.dll, MVID: 678affb3-c99b-4423-9cb9-5b8405af771f, AssemblyLoadContext: MSBuild plugin D:\DevTools\dotnet\sdk\10.0.103\NuGet.Build.Tasks.dll)
+       Assembly loaded during TaskRun: NuGet.ProjectModel, Version=7.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: D:\DevTools\dotnet\sdk\10.0.103\NuGet.ProjectModel.dll, MVID: 186e02d1-69bd-4fe8-b063-002229001751, AssemblyLoadContext: MSBuild plugin D:\DevTools\dotnet\sdk\10.0.103\NuGet.Build.Tasks.dll)
+       Using "GetRestoreSolutionProjectsTask" task from assembly "D:\DevTools\dotnet\sdk\10.0.103\NuGet.Build.Tasks.dll".
+       Task "GetRestoreSolutionProjectsTask"
+       Done executing task "GetRestoreSolutionProjectsTask".
+     1>Done building target "_LoadRestoreGraphEntryPoints" in project "SpanUtilityServices.slnx".
+     1>Target "_FilterRestoreGraphProjectInputItems" in file "D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets" from project "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.slnx" (target "_GenerateRestoreGraph" depends on it):
+       Using "RemoveDuplicates" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "RemoveDuplicates"
+       Done executing task "RemoveDuplicates".
+       Using "MSBuild" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "MSBuild"
+         Global Properties:
+           ExcludeRestorePackageImports=true
+           _RestoreSolutionFileUsed=true
+           SolutionDir=D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\
+           SolutionName=SpanUtilityServices
+           SolutionFileName=SpanUtilityServices.slnx
+           SolutionPath=D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.slnx
+           SolutionExt=.slnx
+         Additional Properties for project "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.Tests\SpanUtilityServices.Tests.csproj":
+           Configuration=Debug
+           Platform=AnyCPU
+         Additional Properties for project "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices\SpanUtilityServices.csproj":
+           Configuration=Debug
+           Platform=AnyCPU
+     0>Assembly loaded during Evaluation: System.Security.Principal.Windows, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: D:\DevTools\dotnet\shared\Microsoft.NETCore.App\10.0.3\System.Security.Principal.Windows.dll, MVID: 94668085-5eab-454a-aadd-f7411e0617e0, AssemblyLoadContext: Default)
+       The SDK "Microsoft.NET.Sdk" was successfully resolved by the "DefaultSdkResolver" resolver to location "D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\Sdk" and version "".
+       Assembly loaded during Evaluation: System.Security.Claims, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: D:\DevTools\dotnet\shared\Microsoft.NETCore.App\10.0.3\System.Security.Claims.dll, MVID: 20e6e427-b6b6-4325-b1e2-55052517fb2d, AssemblyLoadContext: Default)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\Sdk\Sdk.props(49,11): message : Property 'MSBuildExtensionsPath' with value 'D:\DevTools\dotnet\sdk\10.0.103\' expanded from the environment.
+       D:\workspace\utility_packages\Directory.Build.props(94,5): message : Property reassignment: $(IsPackable)="false" (previous value: "true") at D:\workspace\utility_packages\Directory.Build.props (94,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Current\Microsoft.Common.props(60,5): message : Property reassignment: $(MSBuildProjectExtensionsPath)="D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.Tests\obj\" (previous value: "obj\") at D:\DevTools\dotnet\sdk\10.0.103\Current\Microsoft.Common.props (60,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Current\Microsoft.Common.props(84,119): message : Property 'MSBuildUserExtensionsPath' with value 'C:\Users\userJay30\AppData\Local\Microsoft\MSBuild' expanded from the environment.
+       The "Configuration" property is a global property, and cannot be modified.
+       The "Platform" property is a global property, and cannot be modified.
+       The "Configuration" property is a global property, and cannot be modified.
+       The "Platform" property is a global property, and cannot be modified.
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.props(90,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};{HintPathFromItem}" (previous value: "{CandidateAssemblyFiles}") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.props (90,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.props(91,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};{HintPathFromItem};{TargetFrameworkDirectory}" (previous value: "{CandidateAssemblyFiles};{HintPathFromItem}") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.props (91,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.props(92,5): message : Property reassignment: $(AssemblySearchPaths)="{CandidateAssemblyFiles};{HintPathFromItem};{TargetFrameworkDirectory};{RawFileName}" (previous value: "{CandidateAssemblyFiles};{HintPathFromItem};{TargetFrameworkDirectory}") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.props (92,5)
+       Assembly loaded during Evaluation: System.IO.Pipes, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: D:\DevTools\dotnet\shared\Microsoft.NETCore.App\10.0.3\System.IO.Pipes.dll, MVID: 42b9a04c-b3b6-4661-804e-483dc520b19f, AssemblyLoadContext: Default)
+       Assembly loaded during Evaluation: System.Threading.Overlapped, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: D:\DevTools\dotnet\shared\Microsoft.NETCore.App\10.0.3\System.Threading.Overlapped.dll, MVID: 092ab194-5254-4084-95a8-da161dcea080, AssemblyLoadContext: Default)
+       Assembly loaded during Evaluation: System.Security.AccessControl, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a (location: D:\DevTools\dotnet\shared\Microsoft.NETCore.App\10.0.3\System.Security.AccessControl.dll, MVID: d57faabf-f588-4d72-85ec-7817dd50278a, AssemblyLoadContext: Default)
+       The "DefaultSdkResolver" resolver attempted to resolve the SDK "Microsoft.NET.SDK.WorkloadAutoImportPropsLocator".
+       Warnings: null
+       Errors: MSB4276: The default SDK resolver failed to resolve SDK "Microsoft.NET.SDK.WorkloadAutoImportPropsLocator" because directory "D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.SDK.WorkloadAutoImportPropsLocator\Sdk" did not exist.
+       Assembly loaded during Evaluation: Microsoft.Build.NuGetSdkResolver, Version=7.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Build.NuGetSdkResolver.dll, MVID: db6aefef-493b-4de6-a593-ae519e8edd6f, AssemblyLoadContext: MSBuild plugin D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Build.NuGetSdkResolver.dll)
+       Assembly loaded during Evaluation: NuGet.Common, Version=7.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: D:\DevTools\dotnet\sdk\10.0.103\NuGet.Common.dll, MVID: 9a75e9a2-ebcf-4c20-863c-86b8d21a910c, AssemblyLoadContext: MSBuild plugin D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Build.NuGetSdkResolver.dll)
+       Assembly loaded during Evaluation: Microsoft.NET.Sdk.WorkloadMSBuildSdkResolver, Version=10.0.103.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: D:\DevTools\dotnet\sdk\10.0.103\Microsoft.NET.Sdk.WorkloadMSBuildSdkResolver.dll, MVID: 32d497b5-3f90-4858-91ed-bef3ae025be9, AssemblyLoadContext: MSBuild plugin D:\DevTools\dotnet\sdk\10.0.103\Microsoft.NET.Sdk.WorkloadMSBuildSdkResolver.dll)
+       Assembly loaded during Evaluation: Microsoft.DotNet.Cli.Utils, Version=10.0.103.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 (location: D:\DevTools\dotnet\sdk\10.0.103\Microsoft.DotNet.Cli.Utils.dll, MVID: 0c51fd09-7ce3-414f-b142-ef79f42ae85b, AssemblyLoadContext: MSBuild plugin D:\DevTools\dotnet\sdk\10.0.103\Microsoft.NET.Sdk.WorkloadMSBuildSdkResolver.dll)
+       Assembly loaded during Evaluation: Microsoft.NET.Sdk.WorkloadManifestReader, Version=10.0.103.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 (location: D:\DevTools\dotnet\sdk\10.0.103\Microsoft.NET.Sdk.WorkloadManifestReader.dll, MVID: 4fc5b50b-0d78-444c-9b7f-2f8a62d0eac5, AssemblyLoadContext: MSBuild plugin D:\DevTools\dotnet\sdk\10.0.103\Microsoft.NET.Sdk.WorkloadMSBuildSdkResolver.dll)
+       Assembly loaded during Evaluation: Microsoft.Deployment.DotNet.Releases, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Deployment.DotNet.Releases.dll, MVID: ea43f8b8-b27f-4976-9d85-2b4f42217a94, AssemblyLoadContext: MSBuild plugin D:\DevTools\dotnet\sdk\10.0.103\Microsoft.NET.Sdk.WorkloadMSBuildSdkResolver.dll)
+       The SDK "Microsoft.NET.SDK.WorkloadAutoImportPropsLocator" was successfully resolved by the "Microsoft.DotNet.MSBuildWorkloadSdkResolver" resolver to location "null" and version "null".
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.CSharp.props(18,5): message : Property reassignment: $(WarningsAsErrors)=";NU1008;NU1605;NU1605" (previous value: ";NU1008;NU1605") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.CSharp.props (18,5)
+       D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.Tests\SpanUtilityServices.Tests.csproj(4,5): message : Property reassignment: $(ImplicitUsings)="enable" (previous value: "disable") at D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.Tests\SpanUtilityServices.Tests.csproj (4,5)
+       D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.Tests\SpanUtilityServices.Tests.csproj(5,5): message : Property reassignment: $(Nullable)="enable" (previous value: "disable") at D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.Tests\SpanUtilityServices.Tests.csproj (5,5)
+       The "Configuration" property is a global property, and cannot be modified.
+       The "Platform" property is a global property, and cannot be modified.
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.ImportPublishProfile.targets(28,5): message : Property reassignment: $(PublishProfileImported)="false" (previous value: "true") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.ImportPublishProfile.targets (28,5)
+       Assembly loaded during Evaluation: NuGet.Frameworks, Version=7.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 (location: D:\DevTools\dotnet\sdk\10.0.103\NuGet.Frameworks.dll, MVID: 1b7b49ca-9945-4cfa-824f-5d73c248e8d6, AssemblyLoadContext: Assembly.LoadFile(D:\DevTools\dotnet\sdk\10.0.103\NuGet.Frameworks.dll))
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.TargetFrameworkInference.targets(81,5): message : Property reassignment: $(TargetPlatformVersion)="" (previous value: "0.0") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.TargetFrameworkInference.targets (81,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DefaultOutputPaths.targets(127,5): message : Property reassignment: $(DefaultItemExcludes)=";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**;obj\Debug\/**" (previous value: ";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DefaultOutputPaths.targets (127,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DefaultOutputPaths.targets(142,5): message : Property reassignment: $(OutputPath)="D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\net10.0\" (previous value: "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DefaultOutputPaths.targets (142,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DefaultOutputPaths.targets(147,5): message : Property reassignment: $(IntermediateOutputPath)="obj\Debug\net10.0\" (previous value: "obj\Debug\") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DefaultOutputPaths.targets (147,5)
+       The "DefaultSdkResolver" resolver attempted to resolve the SDK "Microsoft.NET.SDK.WorkloadManifestTargetsLocator".
+       Warnings: null
+       Errors: MSB4276: The default SDK resolver failed to resolve SDK "Microsoft.NET.SDK.WorkloadManifestTargetsLocator" because directory "D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.SDK.WorkloadManifestTargetsLocator\Sdk" did not exist.
+       The SDK "Microsoft.NET.SDK.WorkloadManifestTargetsLocator" was successfully resolved by the "Microsoft.DotNet.MSBuildWorkloadSdkResolver" resolver to location "D:\DevTools\dotnet\sdk-manifests\10.0.100\microsoft.net.sdk.android\36.1.2" and version "null".
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.BeforeCommon.targets(371,5): message : Property reassignment: $(RoslynTargetsPath)="D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\..\..\..\Roslyn" (previous value: "D:\DevTools\dotnet\sdk\10.0.103\Roslyn") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.BeforeCommon.targets (371,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Roslyn\Microsoft.Managed.Core.targets(6,5): message : Property reassignment: $(_BuildTasksDirectory)="D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\..\..\..\Roslyn\" (previous value: "D:\DevTools\dotnet\sdk\10.0.103\Roslyn\") at D:\DevTools\dotnet\sdk\10.0.103\Roslyn\Microsoft.Managed.Core.targets (6,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Roslyn\Microsoft.CSharp.Core.targets(200,5): message : Property reassignment: $(CommandLineArgsForDesignTimeEvaluation)="-langversion:14.0 -define:TRACE" (previous value: "-langversion:14.0") at D:\DevTools\dotnet\sdk\10.0.103\Roslyn\Microsoft.CSharp.Core.targets (200,5)
+       The "Platform" property is a global property, and cannot be modified.
+       The "Configuration" property is a global property, and cannot be modified.
+       D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets(175,5): message : Property reassignment: $(_DebugSymbolsProduced)="true" (previous value: "false") at D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets (175,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets(185,5): message : Property reassignment: $(_DocumentationFileProduced)="false" (previous value: "true") at D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets (185,5)
+       The "SolutionName" property is a global property, and cannot be modified.
+       The "SolutionFileName" property is a global property, and cannot be modified.
+       The "SolutionPath" property is a global property, and cannot be modified.
+       The "SolutionDir" property is a global property, and cannot be modified.
+       The "SolutionExt" property is a global property, and cannot be modified.
+       D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets(392,5): message : Property reassignment: $(MSBuildCopyMarkerName)="SpanUtil.D72C3484" (previous value: "SpanUtilityServices.Tests.csproj") at D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets (392,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets(393,5): message : Property reassignment: $(MSBuildCopyMarkerName)="SpanUtil.D72C3484.Up2Date" (previous value: "SpanUtil.D72C3484") at D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets (393,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets(541,5): message : Property reassignment: $(ProcessorArchitecture)="msil" (previous value: "") at D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets (541,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets(580,5): message : Property reassignment: $(DelaySign)="" (previous value: "false") at D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets (580,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets(2606,5): message : Property 'LOCALAPPDATA' with value 'C:\Users\userJay30\AppData\Local' expanded from the environment.
+       D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets(3934,5): message : Property reassignment: $(_SGenGenerateSerializationAssembliesConfig)="Auto" (previous value: "") at D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets (3934,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets(3935,5): message : Property reassignment: $(_SGenGenerateSerializationAssembliesConfig)="Off" (previous value: "Auto") at D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets (3935,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets(5146,5): message : Property reassignment: $(_TargetsThatPrepareProjectReferences)="
+       D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets(5146,5): message :       AssignProjectConfiguration;
+       D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets(5146,5): message :       _SplitProjectReferencesByFileExistence
+       D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets(5146,5): message :     " (previous value: "_SplitProjectReferencesByFileExistence") at D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets (5146,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets(6959,5): message : Property 'MSBuildExtensionsPath32' with value 'D:\DevTools\dotnet\sdk\10.0.103' expanded from the environment.
+       The "_RestoreSolutionFileUsed" property is a global property, and cannot be modified.
+       The "NuGetInteractive" property is a global property, and cannot be modified.
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message : Property reassignment: $(_GenerateRestoreGraphProjectEntryInputProperties)="
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message :       ExcludeRestorePackageImports=true;
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message :       _RestoreSolutionFileUsed=true;
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message :       SolutionDir=D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\;
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message :       SolutionName=SpanUtilityServices;
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message :       SolutionFileName=SpanUtilityServices.slnx;
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message :       SolutionPath=D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.slnx;
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message :       SolutionExt=.slnx;
+       D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets(123,5): message :     " (previous value: "ExcludeRestorePackageImports=true") at D:\DevTools\dotnet\sdk\10.0.103\NuGet.targets (123,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(24,5): message : Property reassignment: $(ProjectAssetsFile)="D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.Tests\obj\project.assets.json" (previous value: "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.Tests\obj\/project.assets.json") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets (24,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(29,5): message : Property reassignment: $(ProjectAssetsCacheFile)="D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.Tests\obj\Debug\net10.0\SpanUtilityServices.Tests.assets.cache" (previous value: "obj\Debug\net10.0\SpanUtilityServices.Tests.assets.cache") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets (29,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message : Property reassignment: $(ResolveAssemblyReferencesDependsOn)="
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :       
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :       ResolveProjectReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :       FindInvalidProjectReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :       GetFrameworkPaths;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :       GetReferenceAssemblyPaths;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :       PrepareForBuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :       ResolveSDKReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :       ExpandSDKReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :     ;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :       ResolvePackageDependenciesForBuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :       _HandlePackageFileConflicts;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :     " (previous value: "
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :       ResolveProjectReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :       FindInvalidProjectReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :       GetFrameworkPaths;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :       GetReferenceAssemblyPaths;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :       PrepareForBuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :       ResolveSDKReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :       ExpandSDKReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(80,5): message :     ") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets (80,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(86,5): message : Property reassignment: $(PrepareResourcesDependsOn)="
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(86,5): message :       ResolvePackageDependenciesForBuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(86,5): message :       _HandlePackageFileConflicts;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(86,5): message :       
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(86,5): message :       ;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(86,5): message :       PrepareResourceNames;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(86,5): message :       ResGen;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(86,5): message :       CompileLicxFiles
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(86,5): message :     
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(86,5): message :     " (previous value: "
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(86,5): message :       ;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(86,5): message :       PrepareResourceNames;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(86,5): message :       ResGen;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(86,5): message :       CompileLicxFiles
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets(86,5): message :     ") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.PackageDependencyResolution.targets (86,5)
+       The "EnableDefaultCompileItems" property is a global property, and cannot be modified.
+       The "EnableDefaultEmbeddedResourceItems" property is a global property, and cannot be modified.
+       The "EnableDefaultNoneItems" property is a global property, and cannot be modified.
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets(35,5): message : Property reassignment: $(DefaultItemExcludes)=";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**;obj\Debug\/**;bin\/**" (previous value: ";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**;obj\Debug\/**") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets (35,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets(37,5): message : Property reassignment: $(DefaultItemExcludes)=";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**;obj\Debug\/**;bin\/**;obj\/**" (previous value: ";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**;obj\Debug\/**;bin\/**") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets (37,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets(40,5): message : Property reassignment: $(DefaultItemExcludes)=";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**;obj\Debug\/**;bin\/**;obj\/**;**/*.user" (previous value: ";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**;obj\Debug\/**;bin\/**;obj\/**") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets (40,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets(41,5): message : Property reassignment: $(DefaultItemExcludes)=";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**;obj\Debug\/**;bin\/**;obj\/**;**/*.user;**/*.*proj" (previous value: ";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**;obj\Debug\/**;bin\/**;obj\/**;**/*.user") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets (41,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets(42,5): message : Property reassignment: $(DefaultItemExcludes)=";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**;obj\Debug\/**;bin\/**;obj\/**;**/*.user;**/*.*proj;**/*.sln" (previous value: ";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**;obj\Debug\/**;bin\/**;obj\/**;**/*.user;**/*.*proj") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets (42,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets(43,5): message : Property reassignment: $(DefaultItemExcludes)=";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**;obj\Debug\/**;bin\/**;obj\/**;**/*.user;**/*.*proj;**/*.sln;**/*.slnx" (previous value: ";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**;obj\Debug\/**;bin\/**;obj\/**;**/*.user;**/*.*proj;**/*.sln") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets (43,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets(44,5): message : Property reassignment: $(DefaultItemExcludes)=";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**;obj\Debug\/**;bin\/**;obj\/**;**/*.user;**/*.*proj;**/*.sln;**/*.slnx;**/*.vssscc" (previous value: ";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**;obj\Debug\/**;bin\/**;obj\/**;**/*.user;**/*.*proj;**/*.sln;**/*.slnx") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets (44,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets(45,5): message : Property reassignment: $(DefaultItemExcludes)=";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**;obj\Debug\/**;bin\/**;obj\/**;**/*.user;**/*.*proj;**/*.sln;**/*.slnx;**/*.vssscc;**/.DS_Store" (previous value: ";D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\\artifacts\Debug\/**;obj\Debug\/**;bin\/**;obj\/**;**/*.user;**/*.*proj;**/*.sln;**/*.slnx;**/*.vssscc") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets (45,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message : Property reassignment: $(ResolveAssemblyReferencesDependsOn)="
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       ResolveProjectReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       FindInvalidProjectReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       GetFrameworkPaths;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       GetReferenceAssemblyPaths;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       PrepareForBuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       ResolveSDKReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       ExpandSDKReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :     ;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       ResolvePackageDependenciesForBuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       _HandlePackageFileConflicts;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :     ;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       ResolveTargetingPackAssets;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :     " (previous value: "
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       ResolveProjectReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       FindInvalidProjectReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       GetFrameworkPaths;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       GetReferenceAssemblyPaths;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       PrepareForBuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       ResolveSDKReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       ExpandSDKReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :     ;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       ResolvePackageDependenciesForBuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :       _HandlePackageFileConflicts;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets(14,5): message :     ") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets (14,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(44,5): message : Property reassignment: $(_GenerateRuntimeConfigurationPropertyInputsCache)="D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.Tests\obj\Debug\net10.0\SpanUtilityServices.Tests.genruntimeconfig.cache" (previous value: "obj\Debug\net10.0\SpanUtilityServices.Tests.genruntimeconfig.cache") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets (44,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(46,5): message : Property reassignment: $(_GeneratePublishDependencyFilePropertyInputsCache)="D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.Tests\obj\Debug\net10.0\SpanUtilityServices.Tests.genpublishdeps.cache" (previous value: "obj\Debug\net10.0\SpanUtilityServices.Tests.genpublishdeps.cache") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets (46,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(48,5): message : Property reassignment: $(_GenerateSingleFileBundlePropertyInputsCache)="D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.Tests\obj\Debug\net10.0\SpanUtilityServices.Tests.genbundle.cache" (previous value: "obj\Debug\net10.0\SpanUtilityServices.Tests.genbundle.cache") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets (48,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(81,5): message : Property reassignment: $(GenerateRuntimeConfigDevFile)="false" (previous value: "true") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets (81,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(98,5): message : Property 'USERPROFILE' with value 'C:\Users\userJay30' expanded from the environment.
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(98,5): message : Property reassignment: $(_DefaultUserProfileRuntimeStorePath)="C:\Users\userJay30" (previous value: "") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets (98,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(99,5): message : Property reassignment: $(_DefaultUserProfileRuntimeStorePath)="C:\Users\userJay30\.dotnet\store" (previous value: "C:\Users\userJay30") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets (99,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(144,5): message : Property reassignment: $(AvailablePlatforms)="Any CPU,x86,x64,ARM32" (previous value: "Any CPU,x86,x64") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets (144,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(148,5): message : Property reassignment: $(AvailablePlatforms)="Any CPU,x86,x64,ARM32,ARM64" (previous value: "Any CPU,x86,x64,ARM32") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets (148,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message : Property reassignment: $(CoreBuildDependsOn)="
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       _CheckForBuildWithNoBuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       BuildOnlySettings;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       PrepareForBuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       PreBuildEvent;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       ResolveReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       PrepareResources;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       ResolveKeySource;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       Compile;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       ExportWindowsMDFile;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       UnmanagedUnregistration;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       GenerateSerializationAssemblies;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       CreateSatelliteAssemblies;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       GenerateManifests;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       GetTargetPath;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       PrepareForRun;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       UnmanagedRegistration;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       IncrementalClean;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       PostBuildEvent
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :     ;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       GenerateBuildDependencyFile;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       GenerateBuildRuntimeConfigurationFiles
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :     " (previous value: "
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       BuildOnlySettings;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       PrepareForBuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       PreBuildEvent;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       ResolveReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       PrepareResources;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       ResolveKeySource;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       Compile;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       ExportWindowsMDFile;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       UnmanagedUnregistration;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       GenerateSerializationAssemblies;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       CreateSatelliteAssemblies;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       GenerateManifests;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       GetTargetPath;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       PrepareForRun;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       UnmanagedRegistration;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       IncrementalClean;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :       PostBuildEvent
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(204,5): message :     ") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets (204,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(213,5): message : Property reassignment: $(CoreCleanDependsOn)="
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(213,5): message :       _SdkBeforeClean;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(213,5): message :       
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(213,5): message :     " (previous value: "") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets (213,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(220,5): message : Property reassignment: $(RebuildDependsOn)="
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(220,5): message :       _SdkBeforeRebuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(220,5): message :       
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(220,5): message :       BeforeRebuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(220,5): message :       Clean;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(220,5): message :       Build;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(220,5): message :       AfterRebuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(220,5): message :     
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(220,5): message :     " (previous value: "
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(220,5): message :       BeforeRebuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(220,5): message :       Clean;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(220,5): message :       Build;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(220,5): message :       AfterRebuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(220,5): message :     ") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets (220,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message : Property reassignment: $(CompileDependsOn)="
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       ResolveReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       ResolveKeySource;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       SetWin32ManifestProperties;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       _SetPreferNativeArm64Win32ManifestProperties;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       FindReferenceAssembliesForReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       _GenerateCompileInputs;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       BeforeCompile;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       _TimeStampBeforeCompile;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       _GenerateCompileDependencyCache;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       CoreCompile;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       _TimeStampAfterCompile;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       AfterCompile;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :     ;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       _CreateAppHost;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       _CreateComHost;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       _GetIjwHostPaths;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :     " (previous value: "
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       ResolveReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       ResolveKeySource;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       SetWin32ManifestProperties;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       _SetPreferNativeArm64Win32ManifestProperties;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       FindReferenceAssembliesForReferences;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       _GenerateCompileInputs;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       BeforeCompile;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       _TimeStampBeforeCompile;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       _GenerateCompileDependencyCache;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       CoreCompile;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       _TimeStampAfterCompile;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :       AfterCompile;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(799,5): message :     ") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets (799,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(1131,5): message : Property reassignment: $(CreateSatelliteAssembliesDependsOn)="
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(1131,5): message :       
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(1131,5): message :       ;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(1131,5): message :       _GenerateSatelliteAssemblyInputs;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(1131,5): message :       ComputeIntermediateSatelliteAssemblies;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(1131,5): message :       GenerateSatelliteAssemblies
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(1131,5): message :     ;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(1131,5): message :       CoreGenerateSatelliteAssemblies
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(1131,5): message :     " (previous value: "
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(1131,5): message :       ;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(1131,5): message :       _GenerateSatelliteAssemblyInputs;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(1131,5): message :       ComputeIntermediateSatelliteAssemblies;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(1131,5): message :       GenerateSatelliteAssemblies
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets(1131,5): message :     ") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets (1131,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.SourceLink.GitLab\build\Microsoft.SourceLink.GitLab.targets(12,5): message : Property reassignment: $(SourceLinkUrlInitializerTargets)=";_InitializeGitHubSourceLinkUrl;_InitializeGitLabSourceLinkUrl" (previous value: ";_InitializeGitHubSourceLinkUrl") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.SourceLink.GitLab\build\Microsoft.SourceLink.GitLab.targets (12,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.SourceLink.GitLab\build\Microsoft.SourceLink.GitLab.targets(13,5): message : Property reassignment: $(SourceControlManagerUrlTranslationTargets)=";TranslateGitHubUrlsInSourceControlInformation;TranslateGitLabUrlsInSourceControlInformation" (previous value: ";TranslateGitHubUrlsInSourceControlInformation") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.SourceLink.GitLab\build\Microsoft.SourceLink.GitLab.targets (13,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.SourceLink.AzureRepos.Git\build\Microsoft.SourceLink.AzureRepos.Git.targets(12,5): message : Property reassignment: $(SourceLinkUrlInitializerTargets)=";_InitializeGitHubSourceLinkUrl;_InitializeGitLabSourceLinkUrl;_InitializeAzureReposGitSourceLinkUrl" (previous value: ";_InitializeGitHubSourceLinkUrl;_InitializeGitLabSourceLinkUrl") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.SourceLink.AzureRepos.Git\build\Microsoft.SourceLink.AzureRepos.Git.targets (12,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.SourceLink.AzureRepos.Git\build\Microsoft.SourceLink.AzureRepos.Git.targets(13,5): message : Property reassignment: $(SourceControlManagerUrlTranslationTargets)=";TranslateGitHubUrlsInSourceControlInformation;TranslateGitLabUrlsInSourceControlInformation;TranslateAzureReposGitUrlsInSourceControlInformation" (previous value: ";TranslateGitHubUrlsInSourceControlInformation;TranslateGitLabUrlsInSourceControlInformation") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.SourceLink.AzureRepos.Git\build\Microsoft.SourceLink.AzureRepos.Git.targets (13,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.SourceLink.Bitbucket.Git\build\Microsoft.SourceLink.Bitbucket.Git.targets(12,5): message : Property reassignment: $(SourceLinkUrlInitializerTargets)=";_InitializeGitHubSourceLinkUrl;_InitializeGitLabSourceLinkUrl;_InitializeAzureReposGitSourceLinkUrl;_InitializeBitbucketGitSourceLinkUrl" (previous value: ";_InitializeGitHubSourceLinkUrl;_InitializeGitLabSourceLinkUrl;_InitializeAzureReposGitSourceLinkUrl") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.SourceLink.Bitbucket.Git\build\Microsoft.SourceLink.Bitbucket.Git.targets (12,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.SourceLink.Bitbucket.Git\build\Microsoft.SourceLink.Bitbucket.Git.targets(13,5): message : Property reassignment: $(SourceControlManagerUrlTranslationTargets)=";TranslateGitHubUrlsInSourceControlInformation;TranslateGitLabUrlsInSourceControlInformation;TranslateAzureReposGitUrlsInSourceControlInformation;TranslateBitbucketGitUrlsInSourceControlInformation" (previous value: ";TranslateGitHubUrlsInSourceControlInformation;TranslateGitLabUrlsInSourceControlInformation;TranslateAzureReposGitUrlsInSourceControlInformation") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.SourceLink.Bitbucket.Git\build\Microsoft.SourceLink.Bitbucket.Git.targets (13,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message : Property reassignment: $(DesignerRuntimeImplementationProjectOutputGroupDependsOn)="
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       ;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       ;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       BuildOnlySettings;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       PrepareForBuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       AssignTargetPaths;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       ResolveReferences
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :     
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :     ;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       _GenerateDesignerDepsFile;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       _GenerateDesignerRuntimeConfigFile;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       GetCopyToOutputDirectoryItems;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       _GatherDesignerShadowCopyFiles;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :     " (previous value: "
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       ;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       ;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       BuildOnlySettings;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       PrepareForBuild;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       AssignTargetPaths;
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :       ResolveReferences
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :     
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets(21,5): message :     ") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets (21,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.CSharp.targets(31,5): message : Property reassignment: $(DefineConstants)="TRACE;DEBUG" (previous value: "TRACE") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.CSharp.targets (31,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.CSharp.targets(45,5): message : Property reassignment: $(WarningsAsErrors)=";NU1008;NU1605;NU1605;SYSLIB0011" (previous value: ";NU1008;NU1605;NU1605") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.CSharp.targets (45,5)
+     1>Done executing task "MSBuild" -- FAILED.
+     0>D:\DevTools\dotnet\sdk\10.0.103\NuGet.Build.Tasks.Pack.targets(59,5): message : Property reassignment: $(GenerateNuspecDependsOn)="Build;_LoadPackInputItems; _GetTargetFrameworksOutput; _WalkEachTargetPerFramework; _GetPackageFiles; " (previous value: "_LoadPackInputItems; _GetTargetFrameworksOutput; _WalkEachTargetPerFramework; _GetPackageFiles; ") at D:\DevTools\dotnet\sdk\10.0.103\NuGet.Build.Tasks.Pack.targets (59,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\Sdk\Sdk.targets(59,5): message : Property reassignment: $(_IsNotSetContainersTargetsDir)="true" (previous value: "false") at D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\Sdk\Sdk.targets (59,5)
+     1>Done building target "_FilterRestoreGraphProjectInputItems" in project "SpanUtilityServices.slnx" -- FAILED.
+     0>D:\DevTools\dotnet\sdk\10.0.103\Containers\build\Microsoft.NET.Build.Containers.targets(5,5): message : Property reassignment: $(_IsSDKContainerAllowedVersion)="true" (previous value: "false") at D:\DevTools\dotnet\sdk\10.0.103\Containers\build\Microsoft.NET.Build.Containers.targets (5,5)
+       D:\DevTools\dotnet\sdk\10.0.103\Containers\build\Microsoft.NET.Build.Containers.targets(15,5): message : Property reassignment: $(_ContainerIsTargetingNet8TFM)="true" (previous value: "false") at D:\DevTools\dotnet\sdk\10.0.103\Containers\build\Microsoft.NET.Build.Containers.targets (15,5)
+     1>Done Building Project "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices.slnx" (Restore target(s)) -- FAILED.
+     0>Overriding target "ResolveFrameworkReferences" in project "D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets" with target "ResolveFrameworkReferences" from project "D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.FrameworkReferenceResolution.targets".
+       Overriding target "GenerateSupportedTargetFrameworkAlias" in project "D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets" with target "GenerateSupportedTargetFrameworkAlias" from project "D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets".
+       Overriding target "GetReferenceAssemblyPaths" in project "D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets" with target "GetReferenceAssemblyPaths" from project "D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DisableStandardFrameworkResolution.targets".
+       Overriding target "GetFrameworkPaths" in project "D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets" with target "GetFrameworkPaths" from project "D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DisableStandardFrameworkResolution.targets".
+       Overriding target "DesignerRuntimeImplementationProjectOutputGroup" in project "D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets" with target "DesignerRuntimeImplementationProjectOutputGroup" from project "D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.DesignerSupport.targets".
+       Overriding target "Publish" in project "D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets" with target "Publish" from project "D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Publish.targets".
+       Overriding target "ResolveReadyToRunCompilers" in project "D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.CrossGen.targets" with target "ResolveReadyToRunCompilers" from project "D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Publish.targets".
+       Overriding target "GetCopyToPublishDirectoryItems" in project "D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets" with target "GetCopyToPublishDirectoryItems" from project "D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Publish.targets".
+       Overriding target "Run" in project "D:\DevTools\dotnet\sdk\10.0.103\Microsoft.Common.CurrentVersion.targets" with target "Run" from project "D:\DevTools\dotnet\sdk\10.0.103\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets".
+     3>Project "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices\SpanUtilityServices.csproj" on node 2 (_IsProjectRestoreSupported target(s)).
+     3>D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices\SpanUtilityServices.csproj : error MSB4242: SDK Resolver Failure: "SDK could not be resolved by the SDK resolver because the worker node was shut down."
+     3>Done Building Project "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices\SpanUtilityServices.csproj" (_IsProjectRestoreSupported target(s)) -- FAILED.
+
+Build FAILED.
+
+       "D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices\SpanUtilityServices.csproj" (_IsProjectRestoreSupported target) (3) ->
+         D:\workspace\utility_packages\modules\Spans\SpanUtilityServices\SpanUtilityServices\SpanUtilityServices.csproj : error MSB4242: SDK Resolver Failure: "SDK could not be resolved by the SDK resolver because the worker node was shut down."
+
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:01.33

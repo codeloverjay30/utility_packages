@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="GitUtilityServices.Tests/GitUtilityServices.Tests.csproj" />
+  <Project Path="GitUtilityServices/GitUtilityServices.csproj" />
+</Solution>

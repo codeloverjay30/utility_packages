@@ -1,0 +1,77 @@
+﻿namespace DriveInfoUtilityServices.xUnit.Tests;
+
+public class DriveInfoUtilityServiceAccessibleTests
+{
+    private readonly Mock<IFileSystem> _mockFileSystem;
+    private readonly Mock<IPath> _mockPath;
+    private readonly Mock<IDirectory> _mockDirectory;
+    private readonly Mock<IPlatformService> _mockPlatformService;
+    private readonly DriveInfoUtilityService _sut;
+
+    public DriveInfoUtilityServiceAccessibleTests()
+    {
+        // 鐵律：全部使用 Strict Mock，嚴防底層拋出未 Setup 的導覽屬性副作用
+        _mockFileSystem = new Mock<IFileSystem>(MockBehavior.Strict);
+        _mockPath = new Mock<IPath>(MockBehavior.Strict);
+        _mockDirectory = new Mock<IDirectory>(MockBehavior.Strict);
+        _mockPlatformService = new Mock<IPlatformService>(MockBehavior.Strict);
+
+        _mockFileSystem.Setup(f => f.Path).Returns(_mockPath.Object);
+
+        _sut = new DriveInfoUtilityService(_mockFileSystem.Object, _mockPlatformService.Object);
+    }
+
+    [Fact]
+    public void IsDriveReadyAndAccessible_ShouldReturnFalse_WhenPathRootResolutionFails()
+    {
+        // Arrange
+        string invalidPath = "relative/path/without/root";
+        _mockPath.Setup(p => p.GetPathRoot(invalidPath)).Returns(string.Empty);
+
+        // Act
+        bool result = _sut.IsDriveReadyAndAccessible(invalidPath);
+
+        // Assert: 絕對禁止使用 Assert.False，一律採用 FluentAssertions
+        result.Should().BeFalse();
+    }
+
+    [Fact]
+    public void IsDriveReadyAndAccessible_ShouldReturnFalse_WhenWindowsUncPathTimesOutWithIOException()
+    {
+        // Arrange
+        string uncPath = @"\\UnreachableNas\Workspace";
+        _mockPath.Setup(p => p.GetPathRoot(uncPath)).Returns(@"\\UnreachableNas\Workspace");
+        _mockPlatformService.Setup(p => p.IsWindows()).Returns(true);
+        _mockPlatformService.Setup(p => p.IsUncPath(uncPath)).Returns(true);
+
+        _mockFileSystem.Setup(f => f.Directory).Returns(_mockDirectory.Object);
+
+        // 模擬點擊網路路徑時，發生作業系統層級的 TCP 逾時 IOException
+        _mockDirectory.Setup(d => d.Exists(uncPath)).Throws(new IOException("The network name cannot be found."));
+
+        // Act
+        bool result = _sut.IsDriveReadyAndAccessible(uncPath);
+
+        // Assert: 驗證 try-catch 閘道成功沒收異常並還原狀態為 false
+        result.Should().BeFalse();
+    }
+
+    [Fact]
+    public void IsDriveReadyAndAccessible_ShouldReturnTrue_WhenLinuxDirectoryIsFullyAccessible()
+    {
+        // Arrange
+        string linuxPath = "/var/workspace";
+        _mockPath.Setup(p => p.GetPathRoot(linuxPath)).Returns("/");
+        _mockPlatformService.Setup(p => p.IsWindows()).Returns(false);
+
+        _mockFileSystem.Setup(f => f.Directory).Returns(_mockDirectory.Object);
+        _mockDirectory.Setup(d => d.Exists(linuxPath)).Returns(true);
+
+        // Act
+        bool result = _sut.IsDriveReadyAndAccessible(linuxPath);
+
+        // Assert
+        result.Should().BeTrue();
+    }
+}
+    

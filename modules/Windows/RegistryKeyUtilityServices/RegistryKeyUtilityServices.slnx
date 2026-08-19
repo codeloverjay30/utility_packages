@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="RegistryKeyUtilityServices.xUnit.Tests/RegistryKeyUtilityServices.xUnit.Tests.csproj" Id="e659186d-b991-4241-9e6b-141090620433" />
+  <Project Path="RegistryKeyUtilityServices/RegistryKeyUtilityServices.csproj" />
+</Solution>

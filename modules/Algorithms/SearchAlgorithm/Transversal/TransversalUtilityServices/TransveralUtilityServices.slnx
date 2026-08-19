@@ -1,0 +1,4 @@
+<Solution>
+    <Project Path="TransversalUtilityServices/TransversalUtilityServices.csproj" />
+    <Project Path="TransversalUtilityServices.Tests/TransversalUtilityServices.Tests.csproj" />
+</Solution>

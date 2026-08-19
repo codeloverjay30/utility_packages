@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ScriptDiscoveryUtilityServices.Tests/ScriptDiscoveryUtilityServices.Tests.csproj" />
+  <Project Path="ScriptDiscoveryUtilityServices/ScriptDiscoveryUtilityServices.csproj" />
+</Solution>

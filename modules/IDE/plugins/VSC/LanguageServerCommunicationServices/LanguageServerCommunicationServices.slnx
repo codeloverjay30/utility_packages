@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="LanguageServerCommunicationServices.Tests/LanguageServerCommunicationServices.Tests.csproj" />
+  <Project Path="LanguageServerCommunicationServices/LanguageServerCommunicationServices.csproj" />
+</Solution>

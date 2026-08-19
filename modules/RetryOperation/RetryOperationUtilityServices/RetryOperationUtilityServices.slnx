@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Polly.Demo/Polly.Demo.csproj" Id="786bf756-a05c-4feb-b363-95d9305a42c4" />
+  <Project Path="RetryOperationUtilityServices/RetryOperationUtilityServices.csproj" />
+</Solution>

@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PostSharp"/>
+    <PackageReference Include="PostSharp.Patterns.Diagnostics"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CustomAttributes\CustomAttributes.csproj" />
+    <ProjectReference Include="..\PostSharpAttributesUtilityService\PostSharpAttributesUtilityService.csproj" />
+  </ItemGroup>
+
+</Project>

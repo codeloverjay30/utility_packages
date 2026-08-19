@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AntiHijackUtilityServices\AntiHijackUtilityServices.csproj" />
+    <ProjectReference Include="..\AuthenticationUtilityServices\AuthenticationUtilityServices.csproj" />
+    <ProjectReference Include="..\EncryptoUtilityServices\EncryptoUtilityServices.csproj" />
+    <ProjectReference Include="..\GeneratorUtilityServices\GeneratorUtilityServices.csproj" />
+    <ProjectReference Include="..\ObfuscationServices\ObfuscationServices.csproj" />
+    <ProjectReference Include="..\TimeUtilityServices\TimeUtilityServices.csproj" />
+  </ItemGroup>
+
+</Project>

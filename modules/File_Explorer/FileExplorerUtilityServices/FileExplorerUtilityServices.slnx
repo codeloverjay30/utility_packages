@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="FileExplorerUtilityServices.Tests/FileExplorerUtilityServices.Tests.csproj" />
+  <Project Path="FileExplorerUtilityServices/FileExplorerUtilityServices.csproj" />
+</Solution>

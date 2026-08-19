@@ -1,0 +1,186 @@
+PS D:\workspace\utility_packages\modules\AntiHijack> Get-ChildItem -Recurse bin, obj,artifacts,.artifacts | Remove-Item -Recurse
+PS D:\workspace\utility_packages\modules\AntiHijack> dotnet clean
+
+Build succeeded in 2.8s
+PS D:\workspace\utility_packages\modules\AntiHijack> dotnet build -fl -flp:"logFile=AppSafeHelper-solution-msbuild-build.txt;Append=false"
+D:\workspace\utility_packages\modules\AntiHijack\AppSaferDemo\AppSaferDemo.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\AntiHijackUtilityServices\AntiHijackUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\ObfuscationServices\ObfuscationServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\CommonUtilityServices\CommonUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\EncryptoServices.Tests\EncryptoServices.Tests.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\KeyUtilityServices\KeyUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\AuthenticationUtilityServices\AuthenticationUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\GeneratorUtilityServices\GeneratorUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\AntiHijackUtilityServices.Tests\AntiHijackUtilityServices.Tests.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\UtilityServiceReferences\UtilityServiceReferences.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\EncryptoUtilityServices\EncryptoUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\TimeUtilityServices\TimeUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\AuthenticationUtilityServices.Tests\AuthenticationUtilityServices.Tests.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+Restore complete (3.0s)
+  TimeUtilityServices net10.0 succeeded (6.9s) → TimeUtilityServices\bin\Debug\net10.0\TimeUtilityServices.dll
+  ObfuscationServices net10.0 succeeded with 2 warning(s) (6.9s) → ObfuscationServices\bin\Debug\net10.0\ObfuscationServices.dll
+    D:\workspace\utility_packages\modules\AntiHijack\ObfuscationServices\SecurityVisitor.cs(32,30): warning CS8600: Converting null literal or possible null value to non-nullable type.
+    D:\workspace\utility_packages\modules\AntiHijack\ObfuscationServices\ConditionalExpressionVisitor.cs(22,62): warning CS8604: Possible null reference argument for parameter 'property' in 'MemberExpression Expression.Property(Expression? expression, PropertyInfo property)'.
+  KeyUtilityServices net10.0 succeeded (7.0s) → KeyUtilityServices\bin\Debug\net10.0\KeyUtilityServices.dll
+  GeneratorUtilityServices net10.0 succeeded (7.0s) → GeneratorUtilityServices\bin\Debug\net10.0\GeneratorUtilityServices.dll
+  CommonUtilityServices net10.0 succeeded with 4 warning(s) (7.0s) → CommonUtilityServices\bin\Debug\net10.0\CommonUtilityServices.dll
+    D:\workspace\utility_packages\modules\AntiHijack\CommonUtilityServices\Beans\HeartbeatMessage.cs(12,23): warning CS8618: Non-nullable property 'Nonce' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.
+    D:\workspace\utility_packages\modules\AntiHijack\CommonUtilityServices\Beans\HeartbeatMessage.cs(15,23): warning CS8618: Non-nullable property 'AppId' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.
+    D:\workspace\utility_packages\modules\AntiHijack\CommonUtilityServices\Utilities\RedisDatabaseService.cs(40,32): warning CS8602: Dereference of a possibly null reference.
+    D:\workspace\utility_packages\modules\AntiHijack\CommonUtilityServices\Utilities\RedisDatabaseService.cs(44,24): warning CS8603: Possible null reference return.
+  AuthenticationUtilityServices net10.0 succeeded (7.0s) → AuthenticationUtilityServices\bin\Debug\net10.0\AuthenticationUtilityServices.dll
+  EncryptoUtilityServices net10.0 succeeded with 2 warning(s) (7.2s) → EncryptoUtilityServices\bin\Debug\net10.0\EncryptoUtilityServices.dll
+    D:\workspace\utility_packages\modules\AntiHijack\EncryptoUtilityServices\Program.cs(5,1): warning CS0612: 'AesGcmService' is obsolete
+    D:\workspace\utility_packages\modules\AntiHijack\EncryptoUtilityServices\Program.cs(5,35): warning CS0612: 'AesGcmService' is obsolete
+  AntiHijackUtilityServices net10.0 succeeded (1.5s) → AntiHijackUtilityServices\bin\Debug\net10.0\AntiHijackUtilityServices.dll
+  EncryptoServices.Tests net10.0 succeeded (2.2s) → artifacts\Debug\net10.0\EncryptoServices.Tests.dll
+  AuthenticationUtilityServices.Tests net10.0 succeeded (2.4s) → artifacts\Debug\net10.0\AuthenticationUtilityServices.Tests.dll
+  UtilityServiceReferences net10.0 succeeded (1.0s) → UtilityServiceReferences\bin\Debug\net10.0\UtilityServiceReferences.dll
+  AntiHijackUtilityServices.Tests net10.0 succeeded (2.4s) → artifacts\Debug\net10.0\AntiHijackUtilityServices.Tests.dll
+  AppSaferDemo net10.0 succeeded with 1 warning(s) (1.7s) → AppSaferDemo\bin\Debug\net10.0\AppSaferDemo.dll
+    D:\workspace\utility_packages\modules\AntiHijack\AppSaferDemo\Program.cs(36,17): warning CA1416: This call site is reachable on all platforms. 'VirtualMachineDetector' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416)
+
+Build succeeded with 22 warning(s) in 14.0s
+PS D:\workspace\utility_packages\modules\AntiHijack> dotnet test -fl -flp:"logFile=AppSafeHelper-solution-msbuild-test.txt;Append=false"
+D:\workspace\utility_packages\modules\AntiHijack\TimeUtilityServices\TimeUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\GeneratorUtilityServices\GeneratorUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\UtilityServiceReferences\UtilityServiceReferences.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\AntiHijackUtilityServices\AntiHijackUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\AuthenticationUtilityServices.Tests\AuthenticationUtilityServices.Tests.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\EncryptoUtilityServices\EncryptoUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\CommonUtilityServices\CommonUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\AppSaferDemo\AppSaferDemo.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\EncryptoServices.Tests\EncryptoServices.Tests.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\AuthenticationUtilityServices\AuthenticationUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\KeyUtilityServices\KeyUtilityServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\AntiHijackUtilityServices.Tests\AntiHijackUtilityServices.Tests.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+D:\workspace\utility_packages\modules\AntiHijack\ObfuscationServices\ObfuscationServices.csproj : warning NU1506: Duplicate 'PackageVersion' items found. Remove the duplicate items or use the Update functionality to ensure a consistent restore behavior. The duplicate 'PackageVersion' items are: Microsoft.NET.Test.Sdk 17.14.1, Microsoft.NET.Test.Sdk 17.14.1.
+Restore complete (1.5s)
+  AuthenticationUtilityServices net10.0 succeeded (0.3s) → AuthenticationUtilityServices\bin\Debug\net10.0\AuthenticationUtilityServices.dll
+  EncryptoUtilityServices net10.0 succeeded (0.4s) → EncryptoUtilityServices\bin\Debug\net10.0\EncryptoUtilityServices.dll
+  AuthenticationUtilityServices.Tests net10.0 succeeded (0.3s) → artifacts\Debug\net10.0\AuthenticationUtilityServices.Tests.dll
+  EncryptoServices.Tests net10.0 succeeded (0.6s) → artifacts\Debug\net10.0\EncryptoServices.Tests.dll
+  TimeUtilityServices net10.0 succeeded (0.3s) → TimeUtilityServices\bin\Debug\net10.0\TimeUtilityServices.dll
+  KeyUtilityServices net10.0 succeeded (0.4s) → KeyUtilityServices\bin\Debug\net10.0\KeyUtilityServices.dll
+  AntiHijackUtilityServices net10.0 succeeded (0.3s) → AntiHijackUtilityServices\bin\Debug\net10.0\AntiHijackUtilityServices.dll
+  AntiHijackUtilityServices.Tests net10.0 succeeded (0.6s) → artifacts\Debug\net10.0\AntiHijackUtilityServices.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.3)
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.3)
+[xUnit.net 00:00:00.17]   Discovering: AuthenticationUtilityServices.Tests
+[xUnit.net 00:00:00.14]   Discovering: EncryptoServices.Tests
+[xUnit.net 00:00:00.26]   Discovered:  AuthenticationUtilityServices.Tests
+[xUnit.net 00:00:00.22]   Discovered:  EncryptoServices.Tests
+[xUnit.net 00:00:00.29]   Starting:    AuthenticationUtilityServices.Tests
+[xUnit.net 00:00:00.26]   Starting:    EncryptoServices.Tests
+[xUnit.net 00:00:00.36]   Finished:    AuthenticationUtilityServices.Tests
+  AuthenticationUtilityServices.Tests test net10.0 succeeded (2.7s)
+[xUnit.net 00:00:00.50]     EncryptoServices.Tests.EncryptoServiceTests.EncryptText_WhenPayloadIsLarge_ShouldRentAndReturnBuffersFromPoolCorrectly [FAIL]
+[xUnit.net 00:00:00.50]       Moq.MockException : The mock repository failed verification due to the following:
+[xUnit.net 00:00:00.50]
+[xUnit.net 00:00:00.50]          Mock<IByteArrayPool:1>:
+[xUnit.net 00:00:00.50]          This mock failed verification due to the following:
+[xUnit.net 00:00:00.50]
+[xUnit.net 00:00:00.50]             IByteArrayPool p => p.Return(It.Is<byte[]>(arr => object.ReferenceEquals(arr, plainRentedArray)), False):
+[xUnit.net 00:00:00.50]             This setup was not matched.
+[xUnit.net 00:00:00.50]       Stack Trace:
+[xUnit.net 00:00:00.50]         /_/src/Moq/Obsolete/MockFactory.cs(388,0): at Moq.MockFactory.VerifyMocks(Action`1 verifyAction)
+[xUnit.net 00:00:00.51]         /_/src/Moq/Obsolete/MockFactory.cs(347,0): at Moq.MockFactory.VerifyAll()
+[xUnit.net 00:00:00.51]         D:\workspace\utility_packages\modules\AntiHijack\EncryptoServices.Tests\EncryptoServiceTests.cs(212,0): at EncryptoServices.Tests.EncryptoServiceTests.Dispose()
+[xUnit.net 00:00:00.51]         /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs(79,0): at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSource cancellationTokenSource)
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 10.0.3)
+[xUnit.net 00:00:00.12]   Discovering: AntiHijackUtilityServices.Tests
+[xUnit.net 00:00:00.63]     EncryptoServices.Tests.EncryptoServiceTests.EncryptText_WhenKeyLengthIsInvalid_ShouldThrowArgumentException [FAIL]
+[xUnit.net 00:00:00.63]       Expected exception message to match the equivalent of
+[xUnit.net 00:00:00.63]       "*AES-256 requires exactly a 32-byte (256-bit) key buffer*", but
+[xUnit.net 00:00:00.63]       "keyBytes ('16') must be equal to '32'. (Parameter 'keyBytes')
+[xUnit.net 00:00:00.63]       Actual value was 16." does not.
+[xUnit.net 00:00:00.63]
+[xUnit.net 00:00:00.63]       Stack Trace:
+[xUnit.net 00:00:00.63]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:00:00.63]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:00:00.63]            at FluentAssertions.Execution.CollectingAssertionStrategy.ThrowIfAny(IDictionary`2 context)
+[xUnit.net 00:00:00.63]            at FluentAssertions.Execution.AssertionScope.Dispose()
+[xUnit.net 00:00:00.63]            at FluentAssertions.Specialized.ExceptionAssertions`1.ExceptionMessageAssertion.Execute(IEnumerable`1 messages, String expectation, String because, Object[] becauseArgs)
+[xUnit.net 00:00:00.63]            at FluentAssertions.Specialized.ExceptionAssertions`1.ExceptionMessageAssertion.Execute(IEnumerable`1 messages, String expectation, String because, Object[] becauseArgs)
+[xUnit.net 00:00:00.63]            at FluentAssertions.Specialized.ExceptionAssertions`1.WithMessage(String expectedWildcardPattern, String because, Object[] becauseArgs)
+[xUnit.net 00:00:00.63]         D:\workspace\utility_packages\modules\AntiHijack\EncryptoServices.Tests\EncryptoServiceTests.cs(64,0): at EncryptoServices.Tests.EncryptoServiceTests.EncryptText_WhenKeyLengthIsInvalid_ShouldThrowArgumentException()
+[xUnit.net 00:00:00.63]            at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+[xUnit.net 00:00:00.63]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:00.63]   Finished:    EncryptoServices.Tests
+[xUnit.net 00:00:00.17]   Discovered:  AntiHijackUtilityServices.Tests
+[xUnit.net 00:00:00.22]   Starting:    AntiHijackUtilityServices.Tests
+  EncryptoServices.Tests test net10.0 failed with 2 error(s) (2.7s)
+    /_/src/Moq/Obsolete/MockFactory.cs(388): error TESTERROR:
+      EncryptoServices.Tests.EncryptoServiceTests.EncryptText_WhenPayloadIsLarge_ShouldRentAndReturnBuffersFromPoolCorrectly (169ms): Error Message: Moq.Mock
+      Exception : The mock repository failed verification due to the following:
+
+         Mock<IByteArrayPool:1>:
+         This mock failed verification due to the following:
+
+            IByteArrayPool p => p.Return(It.Is<byte[]>(arr => object.ReferenceEquals(arr, plainRentedArray)), False):
+            This setup was not matched.
+      Stack Trace:
+         at Moq.MockFactory.VerifyMocks(Action`1 verifyAction) in /_/src/Moq/Obsolete/MockFactory.cs:line 388
+         at Moq.MockFactory.VerifyAll() in /_/src/Moq/Obsolete/MockFactory.cs:line 347
+         at EncryptoServices.Tests.EncryptoServiceTests.Dispose() in D:\workspace\utility_packages\modules\AntiHijack\EncryptoServices.Tests\EncryptoServiceT
+      ests.cs:line 212
+         at ReflectionAbstractionExtensions.DisposeTestClass(ITest test, Object testClass, IMessageBus messageBus, ExecutionTimer timer, CancellationTokenSou
+      rce cancellationTokenSource) in /_/src/xunit.execution/Extensions/ReflectionAbstractionExtensions.cs:line 79
+    D:\workspace\utility_packages\modules\AntiHijack\EncryptoServices.Tests\EncryptoServiceTests.cs(64): error TESTERROR:
+      EncryptoServices.Tests.EncryptoServiceTests.EncryptText_WhenKeyLengthIsInvalid_ShouldThrowArgumentException (88ms): Error Message: Expected exception m
+      essage to match the equivalent of
+      "*AES-256 requires exactly a 32-byte (256-bit) key buffer*", but
+      "keyBytes ('16') must be equal to '32'. (Parameter 'keyBytes')
+      Actual value was 16." does not.
+
+      Stack Trace:
+         at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+         at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+         at FluentAssertions.Execution.CollectingAssertionStrategy.ThrowIfAny(IDictionary`2 context)
+         at FluentAssertions.Execution.AssertionScope.Dispose()
+         at FluentAssertions.Specialized.ExceptionAssertions`1.ExceptionMessageAssertion.Execute(IEnumerable`1 messages, String expectation, String because,
+      Object[] becauseArgs)
+         at FluentAssertions.Specialized.ExceptionAssertions`1.ExceptionMessageAssertion.Execute(IEnumerable`1 messages, String expectation, String because,
+      Object[] becauseArgs)
+         at FluentAssertions.Specialized.ExceptionAssertions`1.WithMessage(String expectedWildcardPattern, String because, Object[] becauseArgs)
+         at EncryptoServices.Tests.EncryptoServiceTests.EncryptText_WhenKeyLengthIsInvalid_ShouldThrowArgumentException() in D:\workspace\utility_packages\mo
+      dules\AntiHijack\EncryptoServices.Tests\EncryptoServiceTests.cs:line 64
+         at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+         at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:00.41]   Finished:    AntiHijackUtilityServices.Tests
+  AntiHijackUtilityServices.Tests test net10.0 succeeded (2.1s)
+
+Test summary: total: 24, failed: 2, succeeded: 22, skipped: 0, duration: 3.2s
+Build failed with 2 error(s) and 13 warning(s) in 5.9s
+PS D:\workspace\utility_packages\modules\AntiHijack> repomix
+
+📦 Repomix v1.14.0
+
+✔ Packing completed successfully!
+
+📈 Top 5 Files by Token Count:
+──────────────────────────────
+1.  EncryptoServices.Tests/EncryptoServiceTests.cs (1,996 tokens, 7,636 chars, 7.9%)
+2.  AntiHijackUtilityServices.Tests/AntiHijackServiceTests.cs (1,932 tokens, 8,095 chars, 7.6%)
+3.  EncryptoUtilityServices/AesGcmService.cs (1,880 tokens, 6,437 chars, 7.4%)
+4.  EncryptoUtilityServices/EncryptoService.cs (1,697 tokens, 6,916 chars, 6.7%)
+5.  AntiHijackUtilityServices/Core/AntiHijackService.cs (1,130 tokens, 5,932 chars, 4.5%)
+
+🔎 Security Check:
+──────────────────
+✔ No suspicious files detected.
+
+
+📊 Pack Summary:
+────────────────
+  Total Files: 69 files
+ Total Tokens: 25,287 tokens
+  Total Chars: 109,697 chars
+       Output: AntiHijack-repomix-output.md
+     Security: ✔ No suspicious files detected
+
+🎉 All Done!
+Your repository has been successfully packed.
+
+💡 Repomix is now available in your browser! Try it at https://repomix.com
+PS D:\workspace\utility_packages\modules\AntiHijack>

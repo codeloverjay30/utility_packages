@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="JsonUtilityServices.Tests/JsonUtilityServices.Tests.csproj" />
+  <Project Path="JsonUtilityServices/JsonUtilityServices.csproj" />
+</Solution>

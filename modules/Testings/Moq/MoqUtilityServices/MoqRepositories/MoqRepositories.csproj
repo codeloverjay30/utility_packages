@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>net10.0;net9.0;net8.0;netstandard2.1;netstandard2.0;net472;net452</TargetFrameworks>
+        <Version>1.0.0-preview-1.0.0</Version>
+        <Description>See README.md</Description>
+        <PackageReleaseNotes>See README.md</PackageReleaseNotes>
+        <PackageTags>$(PackageTags);Moq;Mock;Strict mode in Mock object</PackageTags>
+        <IsPackable>true</IsPackable>
+    </PropertyGroup>
+
+    <Choose>
+        <When Condition="$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')) >= 8.0">
+            <PropertyGroup>
+                <Nullable>enable</Nullable>
+                <ImplicitUsings>enable</ImplicitUsings>
+            </PropertyGroup>
+            <ItemGroup>
+                <PackageReference Include="Moq" />
+                <PackageReference Include="xunit.v3.extensibility.core"/>
+            </ItemGroup>
+        </When>
+        <Otherwise>
+            <PropertyGroup>
+                <Nullable>disable</Nullable>
+                <ImplicitUsings>disable</ImplicitUsings>
+            </PropertyGroup>
+            <ItemGroup>
+                <PackageReference Include="Moq" VersionOverride="4.14.5" />
+                <PackageReference Include="xunit" VersionOverride="2.9.3" />
+            </ItemGroup>
+        </Otherwise>
+    </Choose>
+</Project>

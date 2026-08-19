@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net10.0;net8.0;net48;net472;net452</TargetFrameworks>
+    <Version>2.0.0</Version>
+    <Description>See README.md</Description>
+    <PackageReleaseNotes>See README.md</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <!-- check the version of .NET SDK of imported project greater than or equal to .NET 6.0 -->
+  <PropertyGroup Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net6.0'))">
+      <ImplicitUsings>enable</ImplicitUsings>
+      <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <!-- check the version of .NET SDK of imported project less than .NET 6.0 -->
+  <PropertyGroup Condition="!$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net6.0'))">
+      <ImplicitUsings>disable</ImplicitUsings>
+      <Nullable>disable</Nullable>
+  </PropertyGroup>
+</Project>

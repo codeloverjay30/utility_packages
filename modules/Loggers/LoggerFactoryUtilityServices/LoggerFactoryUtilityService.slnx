@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="LoggerFactoryUtilityServices.Tests/LoggerFactoryUtilityServices.Tests.csproj" />
+  <Project Path="LoggerFactoryUtilityServices/LoggerFactoryUtilityServices.csproj" />
+</Solution>

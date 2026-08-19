@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="WorkspaceStorageCleaner.Tests/WorkspaceStorageCleaner.Tests.csproj" />
+  <Project Path="WorkspaceStorageCleaner/WorkspaceStorageCleaner.csproj" />
+</Solution>

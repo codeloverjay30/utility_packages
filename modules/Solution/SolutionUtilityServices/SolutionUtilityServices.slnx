@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="ProjectsVersionUtilityServices.Tests/ProjectsVersionUtilityServices.Tests.csproj" />
+  <Project Path="ProjectsVersionUtilityServices/ProjectsVersionUtilityServices.csproj" />
+  <Project Path="ProjectUpgrader.Tests/ProjectUpgrader.Tests.csproj" />
+  <Project Path="SolutionUtilityServices.Runners/SolutionUtilityServices.Runners.csproj" />
+  <Project Path="SolutionUtilityServices.Tests/SolutionUtilityServices.Tests.csproj" Id="2a843c6f-33f2-40ea-b8bf-7538ad25d3c7" />
+  <Project Path="SolutionUtilityServices/SolutionUtilityServices.csproj" />
+</Solution>

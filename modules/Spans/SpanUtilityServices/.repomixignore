@@ -1,0 +1,31 @@
+# Add patterns to ignore here, one per line
+# Example:
+# *.log
+# tmp/
+
+tmp/
+
+*.cmd
+*.sh
+*.ps1
+*.psm1
+*.config
+
+
+*.bak
+
+*.log
+*.md
+
+.nuke/
+
+.git/
+.github/
+
+LICENSE
+
+
+my-idea-global.json5
+notification-manager-idea.md
+NotificationTarget.cs
+projects.ignore.json

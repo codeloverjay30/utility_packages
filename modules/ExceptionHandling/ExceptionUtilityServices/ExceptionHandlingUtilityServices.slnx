@@ -1,0 +1,7 @@
+
+<Solution>
+  <Project Path="ExceptionFactories/ExceptionFactories.csproj" />
+  <Project Path="ExceptionHandlingUtilityServices.Tests/ExceptionHandlingUtilityServices.Tests.csproj" Id="4552a8e3-67a1-421a-8c0c-7872ae54d13a" />
+  <Project Path="ExceptionHandlingUtilityServices/ExceptionHandlingUtilityServices.csproj" />
+  <Project Path="ExceptionWrappers/ExceptionWrappers.csproj" />
+</Solution>

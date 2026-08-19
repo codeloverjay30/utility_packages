@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SourceGeneratorUtilityServices.Tests/SourceGeneratorUtilityServices.Tests.csproj" Id="d4e2b4d8-cf8f-46ff-a153-36e9b2cd4956" />
+  <Project Path="SourceGeneratorUtilityServices/SourceGeneratorUtilityServices.csproj" />
+</Solution>

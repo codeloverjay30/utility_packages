@@ -1,0 +1,27 @@
+# Add patterns to ignore here, one per line
+# Example:
+
+*.log
+*.txt
+
+bin/
+obj/
+
+[Aa]rtifacts
+.[Aa]rtifacts
+
+tmp/
+
+*.bak
+
+*.config
+
+*.json5
+*.json
+
+*.md
+
+*.ps1
+*.psm1
+
+*.cmd

@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.Build.Traversal">
+  <ItemGroup>
+    <!-- 自動向下遞迴尋找所有子目錄下的專案檔 -->
+    <ProjectReference Include="**\*.csproj" />
+  </ItemGroup>
+</Project>

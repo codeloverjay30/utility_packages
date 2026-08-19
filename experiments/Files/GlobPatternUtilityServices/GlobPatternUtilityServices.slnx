@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="GlobPatternUtilityServices.xUnit.Tests/GlobPatternUtilityServices.xUnit.Tests.csproj" />
+  <Project Path="GlobPatternUtilityServices/GlobPatternUtilityServices.csproj" />
+</Solution>

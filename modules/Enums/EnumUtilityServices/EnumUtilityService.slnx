@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="EnumUtilityServices/EnumUtilityServices.csproj" />
+  <Project Path="EnumUtilityServices.Tests/EnumUtilityServices.Tests.csproj" Id="d9d3920a-e999-40e0-b2b3-fa60d1d2d8a6" />
+</Solution>

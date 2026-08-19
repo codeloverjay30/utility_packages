@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ConsoleUtilityServices.Tests/ConsoleUtilityServices.Tests.csproj" />
+  <Project Path="ConsoleUtilityServices/ConsoleUtilityServices.csproj" />
+</Solution>
